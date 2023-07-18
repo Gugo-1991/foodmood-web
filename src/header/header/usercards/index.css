@@ -1,0 +1,13 @@
+.carddiv {
+  gap: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: solid;
+  color: rgb(219, 225, 225);
+  font-size: 22px;
+}
