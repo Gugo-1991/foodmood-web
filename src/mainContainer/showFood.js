@@ -17,8 +17,7 @@ function Showfood() {
               name={e.name}
               img={e.img}
               price={e.price}
-              checked={e.checked}
-            ></ContentCreator>
+              checked={e.checked}></ContentCreator>
           );
         })}
       </div>
