@@ -13,8 +13,6 @@ export const addFood = ({ name, img, price }) => {
 };
 
 export const toggleChecked = (id) => async (dispatch) => {
-  const resp = await foodmoodApi.get("users");
-  console.log(resp);
   return dispatch({
     type: CHANGE_CHECKED,
     payload: id,
