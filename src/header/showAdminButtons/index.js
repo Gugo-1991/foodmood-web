@@ -1,14 +1,29 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./index.css";
-import { exitAll } from "../../store/users";
 import { modalIsShow } from "../../store/showmodal";
 import { deleteCard } from "../../store/foods";
 import DropDown from "../dropdown";
 function AdminModal() {
+  const items = useSelector(function (state) {
+    return state.foods.foods;
+  });
+
+  const selectedItems = items.filter((item) => {
+    return item.checked === true;
+  });
   const dispatch = useDispatch();
 
   return (
     <div className="adminmodal">
+      {selectedItems.length > 0 ? (
+        <button
+          onClick={() => dispatch(deleteCard())}
+          type="button"
+          className="btn btn-danger">
+          Delete card
+        </button>
+      ) : null}
+
       <DropDown
         name={"Tools"}
         children={
@@ -16,23 +31,11 @@ function AdminModal() {
             <button
               onClick={() => dispatch(modalIsShow())}
               type="button"
-              className="btn btn-warning">
+              className="btn btn-success">
               Add new card
             </button>
-            <button
-              onClick={() => dispatch(deleteCard())}
-              type="button"
-              className="btn btn-danger">
-              Delete card
-            </button>
-            <button type="button" className="btn btn-warning">
+            <button type="button" className="btn btn-success">
               Add user
-            </button>
-            <button
-              type="button"
-              className="btn btn-dark"
-              onClick={() => dispatch(exitAll())}>
-              EXIT
             </button>
           </>
         }

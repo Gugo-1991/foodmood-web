@@ -1,4 +1,4 @@
-import { CLOSE_MODAL, SHOW_MODAL } from "./type";
+import { CLOSE_MODAL, SHOW_MODAL, SHOW_ADD_USERS } from "./type";
 
 export const modalIsShow = () => {
   return {
@@ -8,5 +8,10 @@ export const modalIsShow = () => {
 export const closeModal = () => {
   return {
     type: CLOSE_MODAL,
+  };
+};
+export const showAddUsersModal = () => {
+  return {
+    type: SHOW_ADD_USERS,
   };
 };
