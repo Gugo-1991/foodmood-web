@@ -3,6 +3,8 @@ import "./index.css";
 import { modalIsShow } from "../../store/showmodal";
 import { deleteCard } from "../../store/foods";
 import DropDown from "../dropdown";
+import { exitAll } from "../../store/users";
+
 function AdminModal() {
   const items = useSelector(function (state) {
     return state.foods.foods;
@@ -36,6 +38,12 @@ function AdminModal() {
             </button>
             <button type="button" className="btn btn-success">
               Add user
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={() => dispatch(exitAll())}>
+              EXIT
             </button>
           </>
         }

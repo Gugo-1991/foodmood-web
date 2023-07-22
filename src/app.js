@@ -15,7 +15,7 @@ function App() {
     return state.modal.showmodal;
   });
   const adduser = useSelector(function (state) {
-    return state.modal.showAddusersModal;
+    return state.modal.showAddUsersModal;
   });
 
   return (

@@ -12,7 +12,7 @@ function AddCard() {
   const modal = useSelector(function (state) {
     return state.modal.showmodal;
   });
-  const [name, setNAme] = useState("");
+  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function AddCard() {
       <input
         required
         placeholder=" type name..."
-        onChange={(e) => setNAme(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         className="cardinput"
         type="text"
       />
