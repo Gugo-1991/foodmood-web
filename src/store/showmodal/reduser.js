@@ -1,8 +1,9 @@
-import { CLOSE_MODAL, SHOW_MODAL, SHOW_ADD_USERS } from "./type";
+import { CLOSE_MODAL, SHOW_MODAL, SHOW_ADD_USERS, SHOW_SIGN_IN } from "./type";
 
 const modal = {
   showmodal: false,
-  showAddUsersModal: true,
+  showAddUsersModal: false,
+  showSignInNewUser: false,
 };
 
 const showModalReduser = (state = modal, action) => {
@@ -17,11 +18,17 @@ const showModalReduser = (state = modal, action) => {
         ...state,
         showmodal: false,
         showAddUsersModal: false,
+        showSignInNewUser: false,
       };
     case SHOW_ADD_USERS:
       return {
         ...state,
         showAddusersModal: !modal.showAddUsersModal,
+      };
+    case SHOW_SIGN_IN:
+      return {
+        ...state,
+        showSignInNewUser: !modal.showSignInNewUser,
       };
 
     default:

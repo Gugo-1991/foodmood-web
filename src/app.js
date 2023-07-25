@@ -6,6 +6,7 @@ import ModalCreator from "./modal/modalCreator";
 import { useSelector } from "react-redux";
 import AddCard from "./modal/modalContent/addCard";
 import AddUsers from "./modal/modalContent/addUsers";
+import SigniInUser from "./modal/modalContent/signIn";
 
 function App() {
   const [user, admin] = useSelector(function (state) {
@@ -17,7 +18,10 @@ function App() {
   const adduser = useSelector(function (state) {
     return state.modal.showAddUsersModal;
   });
-
+  const signiIn = useSelector(function (state) {
+    return state.modal.showSignInNewUser;
+  });
+  console.log(signiIn);
   return (
     <>
       <Fixheader />
@@ -25,6 +29,7 @@ function App() {
       {user.enter ? <ShowFood /> : admin.enter ? <ShowFood /> : null}
       {modal ? <ModalCreator children={<AddCard />} /> : null}
       {adduser ? <ModalCreator children={<AddUsers />} /> : null}
+      {signiIn ? <ModalCreator children={<SigniInUser />} /> : null}
     </>
   );
 }

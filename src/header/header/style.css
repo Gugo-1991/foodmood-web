@@ -1,5 +1,5 @@
 .header {
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
   position: fixed;
   background-color: rgb(142, 142, 142);

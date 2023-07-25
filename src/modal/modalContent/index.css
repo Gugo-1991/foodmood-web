@@ -45,3 +45,17 @@ input:required {
 input:required:invalid {
   border: 2px solid red;
 }
+
+.signin {
+  border-radius: 15px;
+  width: 300px;
+  height: 40px;
+}
+.signiindiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 450px;
+  height: 400px;
+}

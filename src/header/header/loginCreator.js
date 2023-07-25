@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../header/button";
 import "./style.css";
+import SignUpButton from "./signUp/signUpCreator";
 function LoginCreator() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +14,6 @@ function LoginCreator() {
         type="text"
         placeholder="Enter your login"
       />
-
       <input
         className="password"
         onChange={(e) => setPassword(e.target.value)}
@@ -21,6 +21,8 @@ function LoginCreator() {
         placeholder="Enter your password"
       />
       <Button value={"Login"} login={login} password={password} />
+      <h6>or</h6>
+      <SignUpButton />
     </div>
   );
 }
