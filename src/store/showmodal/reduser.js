@@ -1,7 +1,8 @@
-import { CLOSE_MODAL, SHOW_MODAL } from "./type";
+import { CLOSE_MODAL, SHOW_MODAL, SHOW_ADD_USERS } from "./type";
 
 const modal = {
   showmodal: false,
+  showAddUsersModal: true,
 };
 
 const showModalReduser = (state = modal, action) => {
@@ -15,7 +16,14 @@ const showModalReduser = (state = modal, action) => {
       return {
         ...state,
         showmodal: false,
+        showAddUsersModal: false,
       };
+    case SHOW_ADD_USERS:
+      return {
+        ...state,
+        showAddusersModal: !modal.showAddUsersModal,
+      };
+
     default:
       return state;
   }

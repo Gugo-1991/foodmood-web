@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Button from "../header/button";
-
+import "./style.css";
 function LoginCreator() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div className="input">
+    <div className="inputs">
       <input
         className="login"
         onChange={(e) => setLogin(e.target.value)}
