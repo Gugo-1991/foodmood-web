@@ -17,6 +17,11 @@ function AdminModal() {
 
   return (
     <div className="adminmodal">
+      {selectedItems.length === 1 ? (
+        <button type="button" className="btn btn-dark">
+          Edit
+        </button>
+      ) : null}
       {selectedItems.length > 0 ? (
         <button
           onClick={() => dispatch(deleteCard())}
