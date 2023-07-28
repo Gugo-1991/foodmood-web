@@ -2,13 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginstate } from "../../store/users";
 import { closeModal } from "../../store/showmodal";
-function Login() {
+function Login({ children }) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   return (
     <>
-      {" "}
       <input
         className="login"
         onChange={(e) => setLogin(e.target.value)}
@@ -29,6 +28,7 @@ function Login() {
         }>
         Login
       </button>
+      {children}
       <button
         onClick={() => dispatch(closeModal())}
         type="button"

@@ -4,13 +4,15 @@ import {
   SHOW_ADD_USERS,
   SHOW_SIGN_IN,
   SHOW_LOGIN_MODAL,
+  SHOW_EDIT_MODAL,
 } from "./type";
 
 const modal = {
   showmodal: false,
   showAddUsersModal: false,
   showSignInNewUser: false,
-  showLoginModal: false,
+  showLoginModal: true,
+  showEditModal: false,
 };
 
 const showModalReduser = (state = modal, action) => {
@@ -27,6 +29,7 @@ const showModalReduser = (state = modal, action) => {
         showAddUsersModal: false,
         showSignInNewUser: false,
         showLoginModal: false,
+        showEditModal: false,
       };
     case SHOW_ADD_USERS:
       return {
@@ -41,7 +44,12 @@ const showModalReduser = (state = modal, action) => {
     case SHOW_LOGIN_MODAL:
       return {
         ...state,
-        showLoginModal: !modal.showLoginModal,
+        showLoginModal: true,
+      };
+    case SHOW_EDIT_MODAL:
+      return {
+        ...state,
+        showEditModal: true,
       };
 
     default:

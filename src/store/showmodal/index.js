@@ -1,4 +1,5 @@
 import {
+  SHOW_EDIT_MODAL,
   CLOSE_MODAL,
   SHOW_MODAL,
   SHOW_ADD_USERS,
@@ -29,5 +30,10 @@ export const showSigninModal = () => {
 export const showLoginModal = () => {
   return {
     type: SHOW_LOGIN_MODAL,
+  };
+};
+export const showEditModal = () => {
+  return {
+    type: SHOW_EDIT_MODAL,
   };
 };

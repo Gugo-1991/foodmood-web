@@ -59,3 +59,53 @@ input:required:invalid {
   width: 450px;
   height: 400px;
 }
+.logincard {
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  flex-shrink: 0;
+  padding: 10px;
+  position: fixed;
+  top: 80px;
+  gap: 15px;
+  width: 400px;
+  height: 300px;
+  background-color: rgba(138, 136, 136, 0.927);
+}
+
+.changefood {
+  border: none;
+  gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 270px;
+  height: 80px;
+}
+.yes,
+.no {
+  border-radius: 15px;
+  width: 60px;
+  height: 40px;
+}
+.yes {
+  background-color: green;
+}
+.no {
+  background-color: red;
+}
+.main {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+}
+.h6 {
+  width: 200px;
+
+  overflow: auto;
+}
