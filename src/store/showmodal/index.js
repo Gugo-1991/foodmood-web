@@ -5,6 +5,7 @@ import {
   SHOW_ADD_USERS,
   SHOW_SIGN_IN,
   SHOW_LOGIN_MODAL,
+  CLOSE_LOGIN_MODAL,
 } from "./type";
 
 export const modalIsShow = () => {
@@ -35,5 +36,10 @@ export const showLoginModal = () => {
 export const showEditModal = () => {
   return {
     type: SHOW_EDIT_MODAL,
+  };
+};
+export const closeLoginModal = () => {
+  return {
+    type: CLOSE_LOGIN_MODAL,
   };
 };

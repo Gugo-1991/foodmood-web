@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./index.css";
-import { modalIsShow, showEditModal } from "../../store/showmodal";
+import {
+  modalIsShow,
+  showEditModal,
+  showLoginModal,
+} from "../../store/showmodal";
 import { deleteCard } from "../../store/foods";
 import DropDown from "../dropdown";
 import { exitAll } from "../../store/users";
@@ -50,7 +54,7 @@ function AdminModal() {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => dispatch(exitAll())}>
+              onClick={() => dispatch(exitAll()) && dispatch(showLoginModal())}>
               EXIT
             </button>
           </>

@@ -5,6 +5,7 @@ import {
   SHOW_SIGN_IN,
   SHOW_LOGIN_MODAL,
   SHOW_EDIT_MODAL,
+  CLOSE_LOGIN_MODAL,
 } from "./type";
 
 const modal = {
@@ -31,6 +32,16 @@ const showModalReduser = (state = modal, action) => {
         showLoginModal: false,
         showEditModal: false,
       };
+    case CLOSE_LOGIN_MODAL:
+      return {
+        ...state,
+        showmodal: false,
+        showAddUsersModal: false,
+        showSignInNewUser: false,
+        showLoginModal: true,
+        showEditModal: false,
+      };
+
     case SHOW_ADD_USERS:
       return {
         ...state,

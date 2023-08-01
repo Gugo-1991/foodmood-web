@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { closeModal } from "../../store/showmodal";
+import { closeLoginModal, closeModal } from "../../store/showmodal";
 import "./index.css";
 function SigniInUser() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function SigniInUser() {
 
       <button className="btn btn-outline-dark"> Create account </button>
       <button
-        onClick={() => dispatch(closeModal())}
+        onClick={() => dispatch(closeLoginModal())}
         type="button"
         className="btn btn-outline-danger">
         Cancel
