@@ -27,7 +27,7 @@ function App() {
   const edit = useSelector(function (state) {
     return state.modal.showEditModal;
   });
-  console.log(edit);
+
   return (
     <>
       <Fixheader />
@@ -37,7 +37,6 @@ function App() {
       {adduser ? <ModalCreator children={<AddUsers />} /> : null}
       {signiIn ? <ModalCreator children={<SigniInUser />} /> : null}
       {edit ? <ModalCreator children={<EditModal />} /> : null}
-
       {login ? <LoginModal /> : null}
     </>
   );

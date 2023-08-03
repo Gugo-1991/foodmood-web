@@ -10,15 +10,14 @@ function SigniInUser() {
         <input className="signin" placeholder="email..." />
         <input className="signin" placeholder="password..." />
         <input className="signin" placeholder="confirm password..." />
+        <button className="btn btn-outline-dark"> Create account </button>
+        <button
+          onClick={() => dispatch(closeLoginModal())}
+          type="button"
+          className="btn btn-outline-danger">
+          Cancel
+        </button>
       </div>
-
-      <button className="btn btn-outline-dark"> Create account </button>
-      <button
-        onClick={() => dispatch(closeLoginModal())}
-        type="button"
-        className="btn btn-outline-danger">
-        Cancel
-      </button>
     </>
   );
 }

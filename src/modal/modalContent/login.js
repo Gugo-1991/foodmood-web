@@ -33,9 +33,8 @@ function Login({ children }) {
           placeholder="Enter your password"
         />
         <button className="btn btn-primary">Login</button>
+        {children}
       </form>
-
-      {children}
     </>
   );
 }

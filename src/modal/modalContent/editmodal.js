@@ -19,20 +19,28 @@ function EditModal() {
     <>
       {change ? (
         <>
-          <input
-            defaultValue={name}
-            onChange={(e) => setNewname(e.target.value)}
-          />
-          <input
-            type="number"
-            defaultValue={price}
-            onChange={(e) => setNewprice(e.target.value)}
-          />
-          <input
-            defaultValue={img}
-            onChange={(e) => setNewimg(e.target.value)}
-          />
-
+          <div className="editdiv">
+            <label>Name</label>
+            <input
+              id="login"
+              className="login"
+              defaultValue={name}
+              onChange={(e) => setNewname(e.target.value)}
+            />
+            <label>Price</label>
+            <input
+              className="login"
+              type="number"
+              defaultValue={price}
+              onChange={(e) => setNewprice(e.target.value)}
+            />
+            <label>Img URL</label>
+            <input
+              className="login"
+              defaultValue={img}
+              onChange={(e) => setNewimg(e.target.value)}
+            />
+          </div>
           <button className="btn btn-warning" onClick={() => setchange(false)}>
             Edit
           </button>
