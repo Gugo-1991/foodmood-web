@@ -12,20 +12,17 @@
   align-items: center;
 }
 .card {
+  padding: 20px;
   align-items: center;
   border-radius: 15px;
   display: flex;
-  flex-shrink: 0;
-  padding: 15px;
   position: fixed;
-  top: 200px;
-  gap: 25px;
-  width: 500px;
-  height: 350px;
+  top: 100px;
+  width: 400px;
+  height: auto;
   background-color: rgba(138, 136, 136, 0.927);
 }
 .button {
-  gap: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,8 +53,8 @@ input:required:invalid {
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  width: 450px;
-  height: 400px;
+  width: auto;
+  height: auto;
 }
 .logincard {
   flex-direction: column;
@@ -65,12 +62,11 @@ input:required:invalid {
   border-radius: 15px;
   display: flex;
   flex-shrink: 0;
-  padding: 10px;
   position: fixed;
   top: 80px;
-  gap: 15px;
   width: 400px;
-  height: 300px;
+  height: auto;
+  padding: 20px;
   background-color: rgba(138, 136, 136, 0.927);
 }
 
@@ -95,7 +91,7 @@ input:required:invalid {
 .no {
   background-color: red;
 }
-/* .main {
+.main {
   color: red;
   display: flex;
   flex-direction: column;
@@ -103,7 +99,7 @@ input:required:invalid {
   justify-content: center;
   width: 400px;
   height: 400px;
-} */
+}
 
 .loginform {
   gap: 10px;
@@ -115,9 +111,10 @@ input:required:invalid {
   width: 140px;
 }
 .editdiv {
+  padding: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: auto;
+  width: 300px;
   height: auto;
 }
