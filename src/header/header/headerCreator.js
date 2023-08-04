@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import LoginCreator from "./loginCreator";
 import "./style.css";
 import AdminModal from "../showAdminButtons";
 import ShowUserButton from "../showUserButton";
+import Time from "./signUp/clock";
 
 function Fixheader() {
   const user = useSelector(function (state) {
@@ -14,7 +14,7 @@ function Fixheader() {
   return (
     <>
       <section className="header">
-        {user ? <ShowUserButton /> : admin ? <AdminModal /> : <LoginCreator />}
+        {user ? <ShowUserButton /> : admin ? <AdminModal /> : <Time />}
       </section>
     </>
   );

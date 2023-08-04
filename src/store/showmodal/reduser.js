@@ -1,8 +1,19 @@
-import { CLOSE_MODAL, SHOW_MODAL, SHOW_ADD_USERS } from "./type";
+import {
+  CLOSE_MODAL,
+  SHOW_MODAL,
+  SHOW_ADD_USERS,
+  SHOW_SIGN_IN,
+  SHOW_LOGIN_MODAL,
+  SHOW_EDIT_MODAL,
+  CLOSE_LOGIN_MODAL,
+} from "./type";
 
 const modal = {
   showmodal: false,
-  showAddUsersModal: true,
+  showAddUsersModal: false,
+  showSignInNewUser: false,
+  showLoginModal: true,
+  showEditModal: false,
 };
 
 const showModalReduser = (state = modal, action) => {
@@ -17,11 +28,39 @@ const showModalReduser = (state = modal, action) => {
         ...state,
         showmodal: false,
         showAddUsersModal: false,
+        showSignInNewUser: false,
+        showLoginModal: false,
+        showEditModal: false,
       };
+    case CLOSE_LOGIN_MODAL:
+      return {
+        ...state,
+        showmodal: false,
+        showAddUsersModal: false,
+        showSignInNewUser: false,
+        showLoginModal: true,
+        showEditModal: false,
+      };
+
     case SHOW_ADD_USERS:
       return {
         ...state,
         showAddusersModal: !modal.showAddUsersModal,
+      };
+    case SHOW_SIGN_IN:
+      return {
+        ...state,
+        showSignInNewUser: !modal.showSignInNewUser,
+      };
+    case SHOW_LOGIN_MODAL:
+      return {
+        ...state,
+        showLoginModal: true,
+      };
+    case SHOW_EDIT_MODAL:
+      return {
+        ...state,
+        showEditModal: true,
       };
 
     default:

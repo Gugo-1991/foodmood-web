@@ -1,4 +1,4 @@
-import { ADD_FOOD, CHANGE_CHECKED, DELETE_CARD } from "./type";
+import { ADD_FOOD, CHANGE_CHECKED, DELETE_CARD, EDIT_CARD } from "./type";
 const initionalState = {
   foods: [
     {
@@ -50,7 +50,7 @@ const FoodsReducer = (state = initionalState, action) => {
           ],
         };
       } else return { ...state };
-      break;
+
     case CHANGE_CHECKED:
       const updatedContents = state.foods.map((content) => {
         if (content.id === action.payload) {
@@ -74,6 +74,26 @@ const FoodsReducer = (state = initionalState, action) => {
         ...state,
         foods: deleteCard,
       };
+    case EDIT_CARD:
+      const { newname, newimg, newprice, id } = action.payload;
+      const editfood = state.foods.map((content) => {
+        if (content.id === action.payload.id) {
+          return {
+            ...content,
+            name: newname,
+            id: id,
+            img: newimg,
+            price: newprice,
+            checked: true,
+          };
+        }
+        return content;
+      });
+      return {
+        ...state,
+        foods: editfood,
+      };
+
     default:
       return state;
   }

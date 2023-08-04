@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import "./style.css";
+import "./showFood/index.css";
 import ContentCreator from "./showFood/contentCreator";
 
 function Showfood() {
