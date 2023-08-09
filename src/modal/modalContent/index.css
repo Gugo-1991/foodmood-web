@@ -12,29 +12,29 @@
   align-items: center;
 }
 .card {
-  padding: 20px;
+  gap: 1rem;
+  padding: 1rem;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 1rem;
   display: flex;
   position: fixed;
-  top: 100px;
-  width: 400px;
-  height: auto;
+  top: 8rem;
+  width: 25rem;
+  height: 25rem;
   background-color: rgba(138, 136, 136, 0.927);
 }
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 200px;
+  width: 18rem;
+  height: 14rem;
 }
 .cardinput {
-  width: 150px;
-  height: 50px;
-  border-radius: 15px;
+  height: 2.5rem;
+  border-radius: 1rem;
   box-shadow: 10px 5px 5px black;
-  width: 300px;
+  width: 14rem;
 }
 input:required {
   border: 1px solid green;
@@ -44,46 +44,46 @@ input:required:invalid {
 }
 
 .signin {
-  border-radius: 15px;
-  width: 300px;
-  height: 40px;
+  border-radius: 1rem;
+  width: 14rem;
+  height: 3.5rem;
 }
 .signiindiv {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.7rem;
   width: auto;
   height: auto;
 }
 .logincard {
   flex-direction: column;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 1rem;
   display: flex;
   flex-shrink: 0;
   position: fixed;
-  top: 80px;
-  width: 400px;
+  top: 5rem;
+  width: 25rem;
   height: auto;
-  padding: 20px;
+  padding: 1rem;
   background-color: rgba(138, 136, 136, 0.927);
 }
 
 .changefood {
   border: none;
-  gap: 10px;
+  gap: 0.7rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 270px;
-  height: 80px;
+  width: 16.5rem;
+  height: 5rem;
 }
 .yes,
 .no {
   border-radius: 15px;
-  width: 60px;
-  height: 40px;
+  width: 3.5rem;
+  height: 2.5rem;
 }
 .yes {
   background-color: green;
@@ -97,24 +97,24 @@ input:required:invalid {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
 }
 
 .loginform {
-  gap: 10px;
+  gap: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .btn {
-  width: 140px;
+  width: 9rem;
 }
 .editdiv {
-  padding: 20px;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 300px;
+  width: 18.7rem;
   height: auto;
 }
