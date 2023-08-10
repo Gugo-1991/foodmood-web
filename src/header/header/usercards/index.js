@@ -11,7 +11,7 @@ function UseerCard() {
 
   return (
     <>
-      <div className="carddiv">
+      <div className="carddiv rounded-3">
         <span>{selectedItems.length}</span>
         <p>selected </p>
         <span>{items.length}</span>
