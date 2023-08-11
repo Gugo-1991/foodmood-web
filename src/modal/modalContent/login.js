@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginstate } from "../../store/users";
 import { closeModal } from "../../store/showmodal";
+import LoginModal from "./LoginModal";
 
 function Login({ children }) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+  const [loginModalOpen, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const closeLoginModal = () => setOpen(false);
   const handleSubmit = (e) => {
     if (login && password) {
       e.preventDefault();
@@ -16,26 +20,19 @@ function Login({ children }) {
   };
 
   return (
-    <>
+    <Fragment>
       <h1>Welcome</h1>
-      <form className="loginform" action="form.php" onSubmit={handleSubmit}>
-        <input
-          onSubmit={handleSubmit}
-          className="login rounded-3"
-          onChange={(e) => setLogin(e.target.value)}
-          type="text"
-          placeholder="Enter your login"
-        />
-        <input
-          className="password rounded-3"
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Enter your password"
-        />
-        <button className="btn btn-primary">Login</button>
-        {children}
-      </form>
-    </>
+      <LoginModal
+        className="pt-4"
+        closeLoginModal={closeLoginModal}
+        onOpenModal={onOpenModal}
+        loginModalOpen={loginModalOpen}
+        setPassword={setPassword}
+        setLogin={setLogin}
+        handleSubmit={handleSubmit}
+        children={children}
+      ></LoginModal>
+    </Fragment>
   );
 }
 
