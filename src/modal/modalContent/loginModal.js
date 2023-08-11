@@ -7,7 +7,7 @@ function LoginModalPage() {
   const dispatch = useDispatch();
   return (
     <div className="general">
-      <div className="logincard">
+      <div className="logincard rounded-3">
         {
           <Login
             children={
