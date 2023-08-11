@@ -35,7 +35,7 @@
   width: 14rem;
 }
 input:required {
-  border: 1px solid green;
+  border: 1px solid rgb(19, 75, 19);
 }
 input:required:invalid {
   border: 2px solid red;
