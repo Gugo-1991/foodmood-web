@@ -23,24 +23,24 @@ function AddCard() {
         required
         placeholder=" type name..."
         onChange={(e) => setName(e.target.value)}
-        className="cardinput"
+        className="cardinput rounded-3"
         type="text"
       />
       <input
         required
         onChange={(e) => setPrice(e.target.value)}
-        className="cardinput"
+        className="cardinput rounded-3"
         placeholder=" type price..."
         type="number"
       />
       <input
         required
         onChange={(e) => setImg(e.target.value)}
-        className="cardinput"
+        className="cardinput rounded-3"
         placeholder=" create img url..."
         type="text"
       />
-      <div className="button">
+      <div className="button ">
         <button
           onClick={() =>
             name && price
@@ -49,7 +49,7 @@ function AddCard() {
               : alert("fill in")
           }
           type="button"
-          className="btn btn-outline-dark">
+          className="btn btn-outline-dark ">
           Add
         </button>
         <button

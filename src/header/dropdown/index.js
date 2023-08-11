@@ -5,7 +5,7 @@ function DropDown({ name, children }) {
     <>
       <div className="dropdown">
         <button className="btn btn-dark">{name}</button>
-        <div className="dropdown-content">{children}</div>
+        <div className="dropdown-content rounded-3">{children}</div>
       </div>
     </>
   );

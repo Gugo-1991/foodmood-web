@@ -21,13 +21,13 @@ function Login({ children }) {
       <form className="loginform" action="form.php" onSubmit={handleSubmit}>
         <input
           onSubmit={handleSubmit}
-          className="login"
+          className="login rounded-3"
           onChange={(e) => setLogin(e.target.value)}
           type="text"
           placeholder="Enter your login"
         />
         <input
-          className="password"
+          className="password rounded-3"
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Enter your password"

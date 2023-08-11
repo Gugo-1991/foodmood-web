@@ -23,20 +23,20 @@ function EditModal() {
             <label>Name</label>
             <input
               id="login"
-              className="login"
+              className="login rounded-3"
               defaultValue={name}
               onChange={(e) => setNewname(e.target.value)}
             />
             <label>Price</label>
             <input
-              className="login"
+              className="login rounded-3"
               type="number"
               defaultValue={price}
               onChange={(e) => setNewprice(e.target.value)}
             />
             <label>Img URL</label>
             <input
-              className="login"
+              className="login rounded-3"
               defaultValue={img}
               onChange={(e) => setNewimg(e.target.value)}
             />
@@ -54,10 +54,9 @@ function EditModal() {
             <div id="description"></div>
           </div>
 
-          {/* <div className="h6">imgurl : {newimg ? newimg : img}</div> */}
           <div className="changefood">
             <button
-              className="yes"
+              className="yes rounded-3"
               onClick={() =>
                 dispatch(
                   editCard({
@@ -70,7 +69,9 @@ function EditModal() {
               }>
               Yes
             </button>
-            <button className="no" onClick={() => dispatch(closeModal())}>
+            <button
+              className="no rounded-3"
+              onClick={() => dispatch(closeModal())}>
               No
             </button>
           </div>

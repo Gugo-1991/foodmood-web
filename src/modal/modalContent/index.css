@@ -15,7 +15,6 @@
   gap: 1rem;
   padding: 1rem;
   align-items: center;
-  border-radius: 1rem;
   display: flex;
   position: fixed;
   top: 8rem;
@@ -32,7 +31,6 @@
 }
 .cardinput {
   height: 2.5rem;
-  border-radius: 1rem;
   box-shadow: 10px 5px 5px black;
   width: 14rem;
 }
@@ -44,7 +42,6 @@ input:required:invalid {
 }
 
 .signin {
-  border-radius: 1rem;
   width: 14rem;
   height: 3.5rem;
 }
@@ -59,7 +56,6 @@ input:required:invalid {
 .logincard {
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
   display: flex;
   flex-shrink: 0;
   position: fixed;
@@ -81,7 +77,6 @@ input:required:invalid {
 }
 .yes,
 .no {
-  border-radius: 15px;
   width: 3.5rem;
   height: 2.5rem;
 }

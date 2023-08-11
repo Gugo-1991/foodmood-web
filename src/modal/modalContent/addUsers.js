@@ -6,9 +6,9 @@ function AddUsers() {
   const dispatch = useDispatch();
   return (
     <>
-      <input className="cardinput" placeholder="email..." />
-      <input className="cardinput" placeholder="username..." />
-      <input className="cardinput" placeholder="password..." />
+      <input className="cardinput rounded-3" placeholder="email..." />
+      <input className="cardinput rounded-3" placeholder="username..." />
+      <input className="cardinput rounded-3" placeholder="password..." />
       <button className="btn btn-outline-dark"> Add user</button>
       <button
         onClick={() => dispatch(closeModal())}

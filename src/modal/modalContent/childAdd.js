@@ -2,25 +2,25 @@ function AddCardForAdminModal() {
   return (
     <>
       <div className="general">
-        <div className="card">
+        <div className="card rounded-3">
           <input
             required
             placeholder=" type name..."
             onChange={(e) => setNAme(e.target.value)}
-            className="cardinput"
+            className="cardinput rounded-3"
             type="text"
           />
           <input
             required
             onChange={(e) => setPrice(e.target.value)}
-            className="cardinput"
+            className="cardinput rounded-3"
             placeholder=" type price..."
             type="number"
           />
           <input
             required
             onChange={(e) => setImg(e.target.value)}
-            className="cardinput"
+            className="cardinput rounded-3"
             placeholder=" create img url..."
             type="text"
           />

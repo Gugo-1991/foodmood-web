@@ -7,10 +7,10 @@ function ContentCreator({ img, name, price, checked, id }) {
   return (
     <div
       key={Math.random()}
-      className={checked ? "divcheckedon" : "divcheckedof"}>
+      className={checked ? "divcheckedon rounded-3" : "divcheckedof rounded-3"}>
       <div
         key={Math.random()}
-        className="img"
+        className="img rounded-3"
         style={{
           backgroundImage: `url(${
             img
@@ -19,7 +19,7 @@ function ContentCreator({ img, name, price, checked, id }) {
           })`,
         }}>
         <input
-          className="check"
+          className="check rounded-3"
           key={Math.random()}
           id={id}
           type="checkbox"

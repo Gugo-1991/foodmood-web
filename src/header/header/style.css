@@ -17,7 +17,6 @@
 .login,
 .password {
   border-color: rgb(142, 142, 142);
-  border-radius: 0.7rem;
   width: 12.5rem;
   height: 2rem;
 }
