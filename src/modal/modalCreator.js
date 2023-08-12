@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import Modal from "./modalContent";
-import LoginModalPage from "./modalContent/loginModal";
+import LoginModalPage from "./modalContent/LoginModalPage";
 
 function ModalCreator({ children }) {
   const Modalelement = document.getElementById("modal");
