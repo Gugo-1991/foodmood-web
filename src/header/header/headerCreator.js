@@ -6,15 +6,13 @@ import Time from "./signUp/clock";
 
 function Fixheader() {
   const user = useSelector(function (state) {
-    return state.isLogin.isLogin[0].enter;
+    return state.isLogin.isLogin.role;
   });
-  const admin = useSelector(function (state) {
-    return state.isLogin.isLogin[1].enter;
-  });
+
   return (
     <>
       <section className="header">
-        {user ? <ShowUserButton /> : admin ? <AdminModal /> : <Time />}
+        {user === "admin" ? <AdminModal /> : <Time />}
       </section>
     </>
   );

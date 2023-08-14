@@ -9,7 +9,7 @@ function Showfood() {
 
   return (
     <>
-      <div className="div2">
+      <div className="page">
         {foods.map((e) => {
           return (
             <ContentCreator

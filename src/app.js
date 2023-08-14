@@ -7,11 +7,9 @@ import AddCard from "./modal/modalContent/addCard";
 import AddUsers from "./modal/modalContent/addUsers";
 import SigniInUser from "./modal/modalContent/signIn";
 import EditModal from "./modal/modalContent/editmodal";
+import HomePage from "./homepage/homePage";
 
 function App() {
-  const [user, admin] = useSelector(function (state) {
-    return state.isLogin.isLogin;
-  });
   const modal = useSelector(function (state) {
     return state.modal.showmodal;
   });
@@ -27,17 +25,19 @@ function App() {
   const edit = useSelector(function (state) {
     return state.modal.showEditModal;
   });
-
+  const user = useSelector(function (state) {
+    return state.isLogin.isLogin.role;
+  });
+  console.log(user);
   return (
     <>
       <Fixheader />
-
-      {user.enter ? <ShowFood /> : admin.enter ? <ShowFood /> : null}
+      <HomePage />
+      {user === "admin" ? <ShowFood /> : null}
       {modal ? <ModalCreator children={<AddCard />} /> : null}
       {adduser ? <ModalCreator children={<AddUsers />} /> : null}
       {signiIn ? <ModalCreator children={<SigniInUser />} /> : null}
       {edit ? <ModalCreator children={<EditModal />} /> : null}
-      {login ? <LoginModal /> : null}
     </>
   );
 }
