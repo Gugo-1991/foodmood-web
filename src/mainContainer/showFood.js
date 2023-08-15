@@ -9,17 +9,19 @@ function Showfood() {
 
   return (
     <>
-      <div className="div2">
-        {foods.map((e) => {
-          return (
-            <ContentCreator
-              id={e.id}
-              name={e.name}
-              img={e.img}
-              price={e.price}
-              checked={e.checked}></ContentCreator>
-          );
-        })}
+      <div className="bg d-grid">
+        <div className="page p-3 d-grid ">
+          {foods.map((e) => {
+            return (
+              <ContentCreator
+                id={e.id}
+                name={e.name}
+                img={e.img}
+                price={e.price}
+                checked={e.checked}></ContentCreator>
+            );
+          })}
+        </div>
       </div>
     </>
   );

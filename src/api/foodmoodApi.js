@@ -7,7 +7,6 @@ const api = axios.create({
 });
 api.interceptors.response.use(
   function (response) {
-    console.log("success");
     return response;
   },
   function (error) {
