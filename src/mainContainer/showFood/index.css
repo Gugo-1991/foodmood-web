@@ -1,12 +1,16 @@
 .page {
-  display: grid;
-  width: 500px;
-  height: 600px;
+  width: 20rem;
+  height: 20rem;
   grid-template-columns: auto auto auto auto;
-  padding: 100px;
-  column-gap: 10px;
-  row-gap: 30px;
+  gap: 1rem;
   grid-auto-rows: min-content;
+  margin-top: 7% !important;
+}
+.bg {
+  height: 40rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://t4.ftcdn.net/jpg/02/44/69/87/360_F_244698725_uWdUNY1oiaHthwcb1NK6IqtPuRNKHor2.jpg");
 }
 
 .divcheckedon {

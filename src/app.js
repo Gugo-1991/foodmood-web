@@ -32,7 +32,8 @@ function App() {
   return (
     <>
       <Fixheader />
-      <HomePage />
+
+      {user === "" ? <HomePage /> : null}
       {user === "admin" ? <ShowFood /> : null}
       {modal ? <ModalCreator children={<AddCard />} /> : null}
       {adduser ? <ModalCreator children={<AddUsers />} /> : null}
