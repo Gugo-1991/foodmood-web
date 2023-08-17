@@ -106,10 +106,15 @@ input:required:invalid {
   width: 9rem;
 }
 .editdiv {
-  padding: 1.2rem;
+  gap: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 18.7rem;
+  width: 20rem;
   height: auto;
+}
+.add {
+  width: 20rem;
+  height: auto;
+  gap: 1rem;
 }

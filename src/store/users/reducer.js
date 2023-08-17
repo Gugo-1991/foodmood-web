@@ -1,4 +1,3 @@
-import api from "../../api/foodmoodApi";
 import { OPEN_USER, EXIT_ALL } from "./type";
 const initialState = {
   isLogin: {
@@ -36,18 +35,16 @@ const IsLoginReducer = (state = initialState, action) => {
     // };
 
     case EXIT_ALL:
-      const exit = state.isLogin.map((content) => {
-        if (content.enter === true) {
-          return {
-            ...content,
-            enter: false,
-          };
-        }
-        return content;
-      });
       return {
         ...state,
-        isLogin: exit,
+        isLogin: {
+          createdDate: "",
+          email: "",
+          name: "",
+          password: "",
+          role: "",
+          secondName: "",
+        },
       };
 
     default:

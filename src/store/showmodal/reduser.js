@@ -12,7 +12,7 @@ const modal = {
   showmodal: false,
   showAddUsersModal: false,
   showSignInNewUser: false,
-  showLoginModal: true,
+  showLoginModal: false,
   showEditModal: false,
 };
 

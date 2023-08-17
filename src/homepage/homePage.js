@@ -30,9 +30,9 @@ function HomePage() {
 
   return (
     <Fragment>
-      <div className=" home w-100  d-grid justify-content-center  ">
+      <div className=" bg d-flex ">
         {loginModalOpen ? null : (
-          <div className="mt-1 d-flex flex-column align-items-center bd-highlight  w-100  rounded-3 bg-light p-2 text-dark bg-opacity-10">
+          <div className="mt-1 d-flex flex-column align-items-center rounded-3 bg-light p-2 text-dark bg-opacity-10">
             <h6>Foodmood</h6>
             <div>
               <button className="btn btn-success w-100" onClick={onOpenModal}>
@@ -58,8 +58,8 @@ function HomePage() {
           <input
             className="login rounded-3"
             onChange={(e) => setLogin(e.target.value)}
-            type="text"
-            placeholder="Enter your login"
+            type="email"
+            placeholder="Enter your Email"
           />
           <input
             className="password rounded-3"
