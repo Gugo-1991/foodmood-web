@@ -24,15 +24,14 @@ function App() {
     return state.modal.showEditModal;
   });
   const user = useSelector(function (state) {
-    return state.isLogin.isLogin.role;
+    return state.isLogin.isLogin;
   });
-
+  console.log(user);
   return (
     <>
       <Fixheader />
 
-      {user === "" ? <HomePage /> : null}
-      {user === "admin" ? <ShowFood /> : null}
+      {user === "admin" ? <ShowFood /> : <HomePage />}
       {modal ? <AddCard /> : null}
       {adduser ? <ModalCreator children={<AddUsers />} /> : null}
       {signiIn ? <ModalCreator children={<SigniInUser />} /> : null}

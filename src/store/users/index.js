@@ -11,11 +11,11 @@ export const loginstate =
   async (dispatch) => {
     try {
       const response = await api.post("/auth/login", { login, password });
-      console.log(response.data);
       if (response.status === 200) {
+        localStorage.setItem("isLogin", response.data.role);
+
         dispatch({
           type: OPEN_USER,
-          payload: response.data,
         });
       }
     } catch (error) {

@@ -1,50 +1,20 @@
 import { OPEN_USER, EXIT_ALL } from "./type";
 const initialState = {
-  isLogin: {
-    createdDate: "",
-    email: "",
-    name: "",
-    password: "",
-    role: "",
-    secondName: "",
-  },
+  isLogin: localStorage.getItem("isLogin"),
 };
 const IsLoginReducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_USER:
+      const user = localStorage.getItem("isLogin");
       return {
         ...state,
-        isLogin: action.payload,
+        isLogin: user,
       };
-
-    // const updatedContents = state.isLogin.map((content) => {
-    //   if (
-    //     content.login === `${action.payload.login}` &&
-    //     content.password === `${action.payload.password}`
-    //   ) {
-    //     return {
-    //       ...content,
-    //       enter: !content.enter,
-    //     };
-    //   }
-    //   return content;
-    // });
-    // return {
-    //   ...state,
-    //   isLogin: updatedContents,
-    // };
 
     case EXIT_ALL:
       return {
         ...state,
-        isLogin: {
-          createdDate: "",
-          email: "",
-          name: "",
-          password: "",
-          role: "",
-          secondName: "",
-        },
+        isLogin: null,
       };
 
     default:
