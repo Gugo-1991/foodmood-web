@@ -41,17 +41,8 @@ input:required:invalid {
   border: 2px solid red;
 }
 
-.signin {
-  width: 14rem;
-  height: 3.5rem;
-}
-.signiindiv {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.signupbox {
   gap: 0.7rem;
-  width: auto;
-  height: auto;
 }
 .logincard {
   flex-direction: column;

@@ -6,9 +6,9 @@ import { closeModal } from "../../store/showmodal";
 import { editCard } from "../../store/foods";
 import "./index.css";
 function EditMidal() {
-  const [loginModalOpen, setOpen] = useState(true);
+  const [editModalOpen, setOpen] = useState(true);
 
-  const closeLoginModal = () => setOpen(false);
+  const closeEditModal = () => setOpen(false);
   const dispatch = useDispatch();
 
   const [{ name, price, img, id }] = useSelector(function (state) {
@@ -24,9 +24,9 @@ function EditMidal() {
   return (
     <Fragment>
       <Modal
-        open={loginModalOpen}
+        open={editModalOpen}
         onClose={() => {
-          closeLoginModal();
+          closeEditModal();
           dispatch(closeModal());
         }}
         center
