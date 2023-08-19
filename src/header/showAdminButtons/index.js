@@ -54,7 +54,10 @@ function AdminModal() {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => dispatch(exitAll()) && dispatch(showLoginModal())}>
+              onClick={() => {
+                localStorage.clear();
+                dispatch(exitAll());
+              }}>
               EXIT
             </button>
           </>
