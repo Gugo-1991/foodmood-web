@@ -1,7 +1,6 @@
 import "./app.css";
 import Fixheader from "./header/header/headerCreator";
 import ShowFood from "./mainContainer/showFood";
-import ModalCreator from "./modal/modalCreator";
 import { useSelector } from "react-redux";
 import AddUsers from "./modal/modalContent/addUsers";
 import HomePage from "./homepage/homePage";
@@ -24,7 +23,7 @@ function App() {
       <Fixheader />
       {user === "admin" ? <ShowFood /> : <HomePage />}
       {showmodal ? <AddCard /> : null}
-      {showAddUsersModal ? <ModalCreator children={<AddUsers />} /> : null}
+      {showAddUsersModal ? <AddUsers /> : null}
       {showSignUpNewUser ? <SignUp /> : null}
       {showEditModal ? <EditMidal /> : null}
     </>

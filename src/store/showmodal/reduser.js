@@ -45,7 +45,7 @@ const showModalReduser = (state = modal, action) => {
     case SHOW_ADD_USERS:
       return {
         ...state,
-        showAddusersModal: !modal.showAddUsersModal,
+        showAddUsersModal: true,
       };
     case SHOW_SIGN_UP:
       return {

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./index.css";
 import {
   modalIsShow,
+  showAddUsersModal,
   showEditModal,
   showLoginModal,
 } from "../../store/showmodal";
@@ -48,7 +49,10 @@ function AdminModal() {
               className="btn btn-success">
               Add new card
             </button>
-            <button type="button" className="btn btn-success">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={() => dispatch(showAddUsersModal())}>
               Add user
             </button>
             <button
