@@ -3,9 +3,9 @@ import {
   CLOSE_MODAL,
   SHOW_MODAL,
   SHOW_ADD_USERS,
-  SHOW_SIGN_IN,
   SHOW_LOGIN_MODAL,
   CLOSE_LOGIN_MODAL,
+  SHOW_SIGN_UP,
 } from "./type";
 
 export const modalIsShow = () => {
@@ -23,9 +23,9 @@ export const showAddUsersModal = () => {
     type: SHOW_ADD_USERS,
   };
 };
-export const showSigninModal = () => {
+export const showSignUpModal = () => {
   return {
-    type: SHOW_SIGN_IN,
+    type: SHOW_SIGN_UP,
   };
 };
 export const showLoginModal = () => {

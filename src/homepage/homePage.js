@@ -4,7 +4,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { useDispatch } from "react-redux";
 import { loginstate } from "../store/users";
-import { showSigninModal } from "../store/showmodal";
+import { showSignUpModal } from "../store/showmodal";
 
 function HomePage() {
   const [login, setLogin] = useState("");
@@ -23,8 +23,8 @@ function HomePage() {
     }
   };
 
-  const handleSignIn = () => {
-    dispatch(showSigninModal());
+  const handleSignUp = () => {
+    dispatch(showSignUpModal());
     closeLoginModal();
   };
 
@@ -71,8 +71,8 @@ function HomePage() {
           <button className="btn btn-primary" type="submit">
             Login
           </button>
-          <button className="btn btn-success" onClick={handleSignIn}>
-            Signin
+          <button className="btn btn-success" onClick={handleSignUp}>
+            Signup
           </button>
         </form>
       </Modal>

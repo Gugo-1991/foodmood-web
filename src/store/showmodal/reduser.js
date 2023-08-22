@@ -2,7 +2,7 @@ import {
   CLOSE_MODAL,
   SHOW_MODAL,
   SHOW_ADD_USERS,
-  SHOW_SIGN_IN,
+  SHOW_SIGN_UP,
   SHOW_LOGIN_MODAL,
   SHOW_EDIT_MODAL,
   CLOSE_LOGIN_MODAL,
@@ -11,7 +11,7 @@ import {
 const modal = {
   showmodal: false,
   showAddUsersModal: false,
-  showSignInNewUser: false,
+  showSignUpNewUser: false,
   showLoginModal: false,
   showEditModal: false,
 };
@@ -28,7 +28,7 @@ const showModalReduser = (state = modal, action) => {
         ...state,
         showmodal: false,
         showAddUsersModal: false,
-        showSignInNewUser: false,
+        showSignUpNewUser: false,
         showLoginModal: false,
         showEditModal: false,
       };
@@ -37,7 +37,7 @@ const showModalReduser = (state = modal, action) => {
         ...state,
         showmodal: false,
         showAddUsersModal: false,
-        showSignInNewUser: false,
+        showSignUpNewUser: false,
         showLoginModal: true,
         showEditModal: false,
       };
@@ -45,12 +45,12 @@ const showModalReduser = (state = modal, action) => {
     case SHOW_ADD_USERS:
       return {
         ...state,
-        showAddusersModal: !modal.showAddUsersModal,
+        showAddUsersModal: true,
       };
-    case SHOW_SIGN_IN:
+    case SHOW_SIGN_UP:
       return {
         ...state,
-        showSignInNewUser: !modal.showSignInNewUser,
+        showSignUpNewUser: !modal.showSignUpNewUser,
       };
     case SHOW_LOGIN_MODAL:
       return {
