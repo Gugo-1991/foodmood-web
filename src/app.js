@@ -6,14 +6,13 @@ import AddUsers from "./modal/modalContent/addUsers";
 import HomePage from "./homepage/homePage";
 import EditMidal from "./modal/modalContent/edit";
 import AddCard from "./modal/modalContent/addCard";
-import SignUp from "./modal/modalContent/signUp";
 
 function App() {
   const { showmodal, showAddUsersModal, showEditModal, showSignUpNewUser } =
     useSelector(function (state) {
       return state.modal;
     });
-  console.log(showmodal, showAddUsersModal, showEditModal, showSignUpNewUser);
+  // console.log(showmodal, showAddUsersModal, showEditModal);
 
   const user = useSelector(function (state) {
     return state.isLogin.isLogin;
@@ -24,7 +23,6 @@ function App() {
       {user === "admin" ? <ShowFood /> : <HomePage />}
       {showmodal ? <AddCard /> : null}
       {showAddUsersModal ? <AddUsers /> : null}
-      {showSignUpNewUser ? <SignUp /> : null}
       {showEditModal ? <EditMidal /> : null}
     </>
   );

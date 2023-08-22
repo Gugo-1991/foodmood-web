@@ -5,14 +5,13 @@ import {
   SHOW_SIGN_UP,
   SHOW_LOGIN_MODAL,
   SHOW_EDIT_MODAL,
-  CLOSE_LOGIN_MODAL,
 } from "./type";
 
 const modal = {
   showmodal: false,
   showAddUsersModal: false,
   showSignUpNewUser: false,
-  showLoginModal: false,
+  showLoginModal: true,
   showEditModal: false,
 };
 
@@ -30,15 +29,6 @@ const showModalReduser = (state = modal, action) => {
         showAddUsersModal: false,
         showSignUpNewUser: false,
         showLoginModal: false,
-        showEditModal: false,
-      };
-    case CLOSE_LOGIN_MODAL:
-      return {
-        ...state,
-        showmodal: false,
-        showAddUsersModal: false,
-        showSignUpNewUser: false,
-        showLoginModal: true,
         showEditModal: false,
       };
 
