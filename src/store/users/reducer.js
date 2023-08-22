@@ -18,7 +18,11 @@ const IsLoginReducer = (state = initialState, action) => {
       };
     case ERROR_MESSAGE:
       alert("WRONG LOGIN OR PASSWORD" + action.payload);
-      break;
+      return {
+        ...state,
+        isLogin: null,
+      };
+
     default:
       return state;
   }
