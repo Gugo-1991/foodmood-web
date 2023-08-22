@@ -1,10 +1,5 @@
 import api from "../../api/foodmoodApi";
-import { EXIT_ALL, OPEN_USER } from "./type";
-
-// export const queryUsers = async () => {
-//   const data = await api.get("/users");
-//   console.log(data);
-// };
+import { ERROR_MESSAGE, EXIT_ALL, OPEN_USER } from "./type";
 
 export const loginstate =
   ({ login, password }) =>
@@ -19,8 +14,11 @@ export const loginstate =
         });
       }
     } catch (error) {
-      // Handle error, you can dispatch an error action here
       console.error("Login error:", error);
+      dispatch({
+        type: ERROR_MESSAGE,
+        payload: error,
+      });
     }
   };
 

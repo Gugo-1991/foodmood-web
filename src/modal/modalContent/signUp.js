@@ -1,26 +1,21 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import "react-responsive-modal/styles.css";
 import { useDispatch } from "react-redux";
 import { showLoginModal } from "../../store/showmodal";
-
+import "./index.css";
 function SignUp() {
-  const [signUpModalOpen, setOpen] = useState(true);
-
-  const closeSignUpModal = () => setOpen(false);
-
   const dispatch = useDispatch();
 
   const close = () => {
-    closeSignUpModal();
     dispatch(showLoginModal());
   };
   return (
     <Fragment>
       <div className="signupbox d-flex flex-column align-items-center">
-        <input className="signup" placeholder="name..." />
-        <input className="signup" placeholder="email..." />
-        <input className="signup" placeholder="password..." />
-        <input className="signup" placeholder="confirm password..." />
+        <input className="signup rounded-3" placeholder="name..." />
+        <input className="signup rounded-3" placeholder="email..." />
+        <input className="signup rounded-3" placeholder="password..." />
+        <input className="signup rounded-3" placeholder="confirm password..." />
         <button className="btn btn-outline-dark"> Create account </button>
         <button
           type="button"

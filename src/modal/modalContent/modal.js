@@ -1,23 +1,23 @@
 import { Modal } from "react-responsive-modal";
-
-import React, { useState } from "react";
+import "./index.css";
+import React from "react";
 import { showLoginModal } from "../../store/showmodal";
 import { useDispatch } from "react-redux";
 
 function Showmodal({ Children }) {
   const dispatch = useDispatch();
 
-  const [loginModalOpen, setOpen] = useState(true);
   const close = () => {
     dispatch(showLoginModal());
   };
   return (
     <>
       <Modal
-        open={loginModalOpen}
+        open={true}
         onClose={close}
         center
         classNames={{
+          modal: "rounded-3 w-25",
           overlayAnimationIn: "customEnterOverlayAnimation",
           overlayAnimationOut: "customLeaveOverlayAnimation",
           modalAnimationIn: "customEnterModalAnimation",

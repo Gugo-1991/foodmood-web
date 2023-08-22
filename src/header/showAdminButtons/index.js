@@ -61,6 +61,7 @@ function AdminModal() {
               onClick={() => {
                 localStorage.clear();
                 dispatch(exitAll());
+                dispatch(showLoginModal());
               }}>
               EXIT
             </button>
