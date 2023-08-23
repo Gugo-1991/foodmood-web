@@ -29,3 +29,7 @@ export const exitAll = () => {
     type: EXIT_ALL,
   };
 };
+
+export const ititFirstUser = () => async () => {
+  return await api.post("/users/initFirstUser");
+};
