@@ -6,15 +6,15 @@ import { loginstate } from "../../store/users";
 import { closeModal, showSignUpModal } from "../../store/showmodal";
 
 function Login() {
-  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (login && password) {
-      dispatch(loginstate({ login, password }));
-      closeModal();
+    if (email && password) {
+      dispatch(loginstate({ email, password }));
+      dispatch(closeModal());
     }
   };
 
@@ -28,7 +28,7 @@ function Login() {
         <h2> welcome</h2>
         <input
           className="login rounded-3"
-          onChange={(e) => setLogin(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Enter your Email"
         />
@@ -39,7 +39,10 @@ function Login() {
           type="password"
           placeholder="Enter your password"
         />
-        <button className="btn btn-primary" type="submit">
+        <button
+          className="btn btn-primary"
+          type="submit"
+          onClick={handleSubmit}>
           Login
         </button>
         <button className="btn btn-success" onClick={handleSignUp}>
