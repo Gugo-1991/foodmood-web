@@ -11,13 +11,8 @@ import { useCallback } from "react";
 import Showmodal from "./modal/modalContent/modal";
 import Login from "./modal/modalContent/login";
 import SignUp from "./modal/modalContent/signUp";
-import { closeModal } from "./store/showmodal";
 
 function App() {
-  const dispatch = useDispatch();
-  const close = () => {
-    dispatch(closeModal());
-  };
   const queryUsers = useCallback(async () => {
     try {
       const response = await api.post("./initFirstUser");
@@ -56,7 +51,7 @@ function App() {
       {showEditModal ? <EditMidal /> : null}
 
       {showLoginModal ? (
-        <Showmodal close={close} Children={<Login />} />
+        <Showmodal Children={<Login />} />
       ) : showSignUpNewUser ? (
         <Showmodal Children={<SignUp />} />
       ) : null}

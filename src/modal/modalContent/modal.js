@@ -1,12 +1,14 @@
 import { Modal } from "react-responsive-modal";
 import "./index.css";
 import React from "react";
-import { closeModal } from "../../store/showmodal";
+import { showLoginModal } from "../../store/showmodal";
 import { useDispatch } from "react-redux";
 
-function Showmodal({ Children, close }) {
+function Showmodal({ Children }) {
   const dispatch = useDispatch();
-
+  const close = () => {
+    dispatch(showLoginModal());
+  };
   return (
     <>
       <Modal
