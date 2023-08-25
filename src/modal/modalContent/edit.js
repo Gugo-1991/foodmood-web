@@ -31,6 +31,7 @@ function EditMidal() {
         }}
         center
         classNames={{
+          modal: "rounded-3",
           overlayAnimationIn: "customEnterOverlayAnimation",
           overlayAnimationOut: "customLeaveOverlayAnimation",
           modalAnimationIn: "customEnterModalAnimation",

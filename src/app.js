@@ -6,14 +6,31 @@ import AddUsers from "./modal/modalContent/addUsers";
 import HomePage from "./homepage/homePage";
 import EditMidal from "./modal/modalContent/edit";
 import AddCard from "./modal/modalContent/addCard";
+import Showmodal from "./modal/modalContent/modal";
+import Login from "./modal/modalContent/login";
 import SignUp from "./modal/modalContent/signUp";
+import { queryUsers } from ".";
 
 function App() {
-  const { showmodal, showAddUsersModal, showEditModal, showSignUpNewUser } =
-    useSelector(function (state) {
-      return state.modal;
-    });
-  console.log(showmodal, showAddUsersModal, showEditModal, showSignUpNewUser);
+  const isLogin = localStorage.getItem("isLogin");
+  console.log(isLogin);
+  queryUsers();
+  const {
+    showmodal,
+    showAddUsersModal,
+    showEditModal,
+    showLoginModal,
+    showSignUpNewUser,
+  } = useSelector(function (state) {
+    return state.modal;
+  });
+  console.log(
+    showmodal,
+    showAddUsersModal,
+    showEditModal,
+    showLoginModal,
+    showSignUpNewUser
+  );
 
   const user = useSelector(function (state) {
     return state.isLogin.isLogin;
@@ -21,11 +38,16 @@ function App() {
   return (
     <>
       <Fixheader />
-      {user === "admin" ? <ShowFood /> : <HomePage />}
+      {isLogin ? <ShowFood /> : <HomePage />}
       {showmodal ? <AddCard /> : null}
       {showAddUsersModal ? <AddUsers /> : null}
-      {showSignUpNewUser ? <SignUp /> : null}
       {showEditModal ? <EditMidal /> : null}
+
+      {!isLogin ? (
+        <Showmodal Children={<Login />} />
+      ) : showSignUpNewUser ? (
+        <Showmodal Children={<SignUp />} />
+      ) : null}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { OPEN_USER, EXIT_ALL } from "./type";
+import { OPEN_USER, EXIT_ALL, ERROR_MESSAGE } from "./type";
 const initialState = {
   isLogin: localStorage.getItem("isLogin"),
 };
@@ -12,6 +12,12 @@ const IsLoginReducer = (state = initialState, action) => {
       };
 
     case EXIT_ALL:
+      return {
+        ...state,
+        isLogin: null,
+      };
+    case ERROR_MESSAGE:
+      alert("WRONG LOGIN OR PASSWORD" + action.payload);
       return {
         ...state,
         isLogin: null,
