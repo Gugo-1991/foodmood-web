@@ -1,8 +1,22 @@
 .adminmodal {
   gap: 0.7rem;
-  display: flex;
-  padding: 1.5rem;
-  justify-content: center;
-  align-items: center;
-  width: auto;
+}
+.adminprofile {
+  width: 9rem;
+  height: 4.5rem;
+  border-radius: 40%;
+  -moz-border-radius: 40%;
+  -webkit-border-radius: 40%;
+  -khtml-border-radius: 10%;
+}
+.adminphoto {
+  border: 2px solid green;
+  width: 3rem;
+  height: 5rem;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  background-size: cover;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO021JSRZOa1_9zbzFR0tK7wRD3xoxnd9Ad3v26DksTiwfpIQLV8vMEbHpbZoZZOxpHc&usqp=CAU");
 }
