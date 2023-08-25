@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./showFood/index.css";
 import ContentCreator from "./showFood/contentCreator";
+import { closeModal } from "../store/showmodal";
 
 function Showfood() {
   const foods = useSelector(function (state) {

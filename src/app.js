@@ -1,26 +1,19 @@
 import "./app.css";
 import Fixheader from "./header/header/headerCreator";
 import ShowFood from "./mainContainer/showFood";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AddUsers from "./modal/modalContent/addUsers";
 import HomePage from "./homepage/homePage";
 import EditMidal from "./modal/modalContent/edit";
 import AddCard from "./modal/modalContent/addCard";
-import api from "./api/foodmoodApi";
-import { useCallback } from "react";
 import Showmodal from "./modal/modalContent/modal";
 import Login from "./modal/modalContent/login";
 import SignUp from "./modal/modalContent/signUp";
+import { queryUsers } from ".";
 
 function App() {
-  const queryUsers = useCallback(async () => {
-    try {
-      const response = await api.post("./initFirstUser");
-      console.log(response.data);
-    } catch (error) {
-      // console.error("Error fetching users:", error);
-    }
-  }, []);
+  const isLogin = localStorage.getItem("isLogin");
+  console.log(isLogin);
   queryUsers();
   const {
     showmodal,
@@ -45,12 +38,12 @@ function App() {
   return (
     <>
       <Fixheader />
-      {user === "admin" ? <ShowFood /> : <HomePage />}
+      {isLogin ? <ShowFood /> : <HomePage />}
       {showmodal ? <AddCard /> : null}
       {showAddUsersModal ? <AddUsers /> : null}
       {showEditModal ? <EditMidal /> : null}
 
-      {showLoginModal ? (
+      {!isLogin ? (
         <Showmodal Children={<Login />} />
       ) : showSignUpNewUser ? (
         <Showmodal Children={<SignUp />} />
