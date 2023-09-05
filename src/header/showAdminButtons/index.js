@@ -21,7 +21,7 @@ function AdminModal() {
   const dispatch = useDispatch();
 
   return (
-    <div className="adminmodal">
+    <div className="adminmodal d-flex flex-sm-row-reverse ">
       {selectedItems.length === 1 ? (
         <button
           onClick={() => dispatch(showEditModal())}
