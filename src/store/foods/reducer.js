@@ -34,22 +34,13 @@ const initionalState = {
 const FoodsReducer = (state = initionalState, action) => {
   switch (action.type) {
     case ADD_FOOD:
-      const { name, img, price } = action.payload;
-      if (name.length > 1 && price.length > 0) {
-        return {
-          ...state,
-          foods: [
-            ...state.foods,
-            {
-              name: name,
-              id: state.foods.length + 1,
-              img: img,
-              price: price,
-              checked: false,
-            },
-          ],
-        };
-      } else return { ...state };
+      const item = action.payload;
+      console.log(item.name.length > 1);
+      console.log(item.price > 0);
+      return {
+        ...state,
+        foods: [...state.foods, item],
+      };
 
     case CHANGE_CHECKED:
       const updatedContents = state.foods.map((content) => {

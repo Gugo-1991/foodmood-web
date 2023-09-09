@@ -9,7 +9,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 export const queryUsers = async () => {
   try {
-    const response = await api.post("./initFirstUser");
+    const response = await api.post("users/initFirstUser");
     console.log(response.data);
   } catch (error) {}
 }; // Replace the comma with a semicolon

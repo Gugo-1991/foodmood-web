@@ -3,6 +3,7 @@ import "./style.css";
 import AdminModal from "../showAdminButtons";
 import Time from "./signUp/clock";
 import AdminFrofile from "../showAdminButtons/adminProfile";
+import ShowUserButton from "../showUserButton";
 
 function Fixheader() {
   const user = useSelector(function (state) {
@@ -15,6 +16,7 @@ function Fixheader() {
         <div className="admin2 d-flex  w-100  align-items-center">
           {user === "admin" ? <AdminModal /> : <Time />}
           {user === "admin" ? <AdminFrofile /> : null}
+          {user === "user" ? <ShowUserButton /> : null}
         </div>
       </section>
     </>

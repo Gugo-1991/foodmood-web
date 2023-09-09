@@ -13,7 +13,6 @@ import { queryUsers } from ".";
 
 function App() {
   const isLogin = localStorage.getItem("isLogin");
-  console.log(isLogin);
   queryUsers();
   const {
     showmodal,
@@ -42,10 +41,8 @@ function App() {
       {showmodal ? <AddCard /> : null}
       {showAddUsersModal ? <AddUsers /> : null}
       {showEditModal ? <EditMidal /> : null}
-
-      {!isLogin ? (
-        <Showmodal Children={<Login />} />
-      ) : showSignUpNewUser ? (
+      {!isLogin && showLoginModal ? <Showmodal Children={<Login />} /> : null}
+      {!isLogin && showSignUpNewUser ? (
         <Showmodal Children={<SignUp />} />
       ) : null}
     </>

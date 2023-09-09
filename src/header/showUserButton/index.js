@@ -7,12 +7,16 @@ function ShowUserButton() {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="adminmodal">
+      <div className="adminmodal d-flex ">
         <UseerCard />
         <button
           type="button"
           className="btn btn-dark"
-          onClick={() => dispatch(exitAll()) && dispatch(showLoginModal())}>
+          onClick={() => {
+            localStorage.clear();
+            dispatch(exitAll());
+            dispatch(showLoginModal());
+          }}>
           EXIT
         </button>
       </div>

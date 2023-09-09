@@ -21,6 +21,12 @@ export const loginstate =
       });
     }
   };
+export const addUser = (user) => async (dispatch) => {
+  console.log(user);
+  const response = await api.post("/users", user);
+
+  dispatch(exitAll);
+};
 
 export const exitAll = () => {
   return {
