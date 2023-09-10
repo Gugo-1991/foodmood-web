@@ -6,7 +6,6 @@ function Showfood() {
   const foods = useSelector(function (state) {
     return state.foods.foods;
   });
-
   return (
     <>
       <div className="bg d-grid vh-100">
@@ -14,7 +13,7 @@ function Showfood() {
           {foods.map((e) => {
             return (
               <ContentCreator
-                id={e.id}
+                _id={e._id}
                 name={e.name}
                 img={e.img}
                 price={e.price}

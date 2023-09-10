@@ -1,7 +1,8 @@
 import "./app.css";
+import { useCallback, useEffect } from "react";
 import Fixheader from "./header/header/headerCreator";
 import ShowFood from "./mainContainer/showFood";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AddUsers from "./modal/modalContent/addUsers";
 import HomePage from "./homepage/homePage";
 import EditMidal from "./modal/modalContent/edit";
@@ -10,8 +11,14 @@ import Showmodal from "./modal/modalContent/modal";
 import Login from "./modal/modalContent/login";
 import SignUp from "./modal/modalContent/signUp";
 import { queryUsers } from ".";
+import { getFood } from "./store/foods";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFood());
+  }, []);
+
   const isLogin = localStorage.getItem("isLogin");
   queryUsers();
   const {

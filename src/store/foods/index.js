@@ -1,14 +1,19 @@
-import { ADD_FOOD, CHANGE_CHECKED, DELETE_CARD, EDIT_CARD } from "./type";
+import {
+  ADD_FOOD,
+  CHANGE_CHECKED,
+  DELETE_CARD,
+  EDIT_CARD,
+  GET_FOOD,
+} from "./type";
 import api from "../../api/foodmoodApi";
 
 export const addFood = (item) => async (dispatch) => {
-  console.log(item);
   const response = await api.post("/items", item);
   if (response.status !== 200) {
     return;
   }
-  const food = dispatch(getFood());
-  console.log(food);
+  // const food = dispatch(getFood());
+  // console.log(food);
   return dispatch({
     type: ADD_FOOD,
     payload: response.data,
@@ -17,16 +22,19 @@ export const addFood = (item) => async (dispatch) => {
 
 export const getFood = () => async (dispatch) => {
   const response = await api.get("/items");
-  console.log(response.data);
 
   if (response.status !== 200) {
     return;
   }
+  return dispatch({
+    type: GET_FOOD,
+    payload: response.data,
+  });
 };
-export const toggleChecked = (id) => async (dispatch) => {
+export const toggleChecked = (_id) => async (dispatch) => {
   return dispatch({
     type: CHANGE_CHECKED,
-    payload: id,
+    payload: _id,
   });
 };
 export const deleteCard = () => {
@@ -34,14 +42,14 @@ export const deleteCard = () => {
     type: DELETE_CARD,
   };
 };
-export const editCard = ({ newname, newprice, newimg, id }) => {
+export const editCard = ({ newname, newprice, newimg, _id }) => {
   return {
     type: EDIT_CARD,
     payload: {
       newname: newname,
       newimg: newimg,
       newprice: newprice,
-      id: id,
+      _id: _id,
     },
   };
 };

@@ -49,7 +49,6 @@ function AddUsers() {
     dispatch(addUser(user));
     dispatch(closeModal());
   };
-  console.log(user);
   return (
     <Fragment>
       <Modal
