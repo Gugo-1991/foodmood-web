@@ -1,4 +1,5 @@
 import api from "../../api/foodmoodApi";
+import { showLoginModal } from "../showmodal";
 import { ERROR_MESSAGE, EXIT_ALL, OPEN_USER } from "./type";
 
 export const loginstate =
@@ -8,6 +9,7 @@ export const loginstate =
       const response = await api.post("/auth/login", { email, password });
       if (response.status === 200) {
         localStorage.setItem("isLogin", response.data.role);
+        localStorage.setItem("userName", response.data.name);
 
         dispatch({
           type: OPEN_USER,
@@ -22,9 +24,12 @@ export const loginstate =
     }
   };
 export const addUser = (user) => async (dispatch) => {
-  await api.post("/users", user);
-
-  dispatch(exitAll);
+  const response = await api.post("/users", user);
+  if (response.status !== 200) {
+    console.log("error" + " " + response.massage);
+  }
+  alert("Now you can login dear" + " " + user.name);
+  dispatch(showLoginModal());
 };
 
 export const exitAll = () => {
