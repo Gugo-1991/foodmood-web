@@ -17,6 +17,7 @@ export const loginstate =
       }
     } catch (error) {
       console.error("Login error:", error);
+      dispatch(showLoginModal());
       dispatch({
         type: ERROR_MESSAGE,
         payload: error,
