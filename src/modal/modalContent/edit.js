@@ -13,14 +13,20 @@ function EditMidal() {
 
   const item = useSelector(function (state) {
     return state.foods.foods.filter((e) => {
-      return e.checked === false;
+      return e.checked === true;
     });
   });
-  console.log("item::" + item.name);
-  const [newname, setNewname] = useState("");
-  const [newprice, setNewprice] = useState("");
-  const [newimg, setNewimg] = useState("");
+  const eItem = item[0];
+  const [newname, setNewname] = useState(eItem.name);
+  const [newprice, setNewprice] = useState(eItem.price);
+  const [newimg, setNewimg] = useState(eItem.img);
   const [change, setchange] = useState(true);
+
+  const editItem = {
+    name: newname,
+    price: newprice,
+    img: newimg,
+  };
 
   return (
     <Fragment>
@@ -44,19 +50,25 @@ function EditMidal() {
             <>
               <div className="editdiv">
                 <label>Name</label>
+
                 <input
+                  value={newname}
                   id="login"
                   className="login rounded-3"
                   onChange={(e) => setNewname(e.target.value)}
                 />
                 <label>Price</label>
                 <input
+                  value={newprice}
+                  // placeholder={item[0].price}
                   className="login rounded-3"
                   type="number"
                   onChange={(e) => setNewprice(e.target.value)}
                 />
                 <label>Img URL</label>
                 <input
+                  value={newimg}
+                  // placeholder={item[0].img}
                   className="login rounded-3"
                   onChange={(e) => setNewimg(e.target.value)}
                 />
@@ -70,8 +82,8 @@ function EditMidal() {
           ) : (
             <div className="main">
               <h5>are you sure? you you want to change card?</h5>
-              <h6>name : {newname ? newname : null}</h6>
-              <h6>price : {newprice ? newprice : null}</h6>
+              <h6>name :{newname} </h6>
+              <h6>price :{newprice} </h6>
               <div class="search_page_item">
                 <div id="description"></div>
               </div>
@@ -80,20 +92,14 @@ function EditMidal() {
                 <button
                   className="yes rounded-3"
                   onClick={() => {
-                    dispatch(
-                      editCard({
-                        newname: newname ? newname : null,
-                        newprice: newprice ? newprice : null,
-                        newimg: newimg ? newimg : null,
-                      })
-                    );
+                    dispatch(editCard(editItem, item[0]._id));
                     dispatch(closeModal());
                   }}>
                   Yes
                 </button>
                 <button
                   className="no rounded-3"
-                  onClick={() => dispatch(closeModal())}>
+                  onClick={() => setchange(true)}>
                   No
                 </button>
               </div>

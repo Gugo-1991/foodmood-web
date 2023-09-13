@@ -15,7 +15,6 @@ const FoodsReducer = (state = initionalState, action) => {
       const newItems = items.map((e) => {
         return { ...e, checked: false };
       });
-      console.log(newItems);
       return {
         foods: [...newItems],
       };
@@ -28,7 +27,6 @@ const FoodsReducer = (state = initionalState, action) => {
 
     case CHANGE_CHECKED:
       const updatedContents = state.foods.map((content) => {
-        console.log(action.payload);
         if (content._id === action.payload) {
           return {
             ...content,

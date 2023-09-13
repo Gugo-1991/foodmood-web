@@ -11,6 +11,8 @@ import DropDown from "../dropdown";
 import { exitAll } from "../../store/users";
 
 function AdminModal() {
+  const dispatch = useDispatch();
+
   const items = useSelector(function (state) {
     return state.foods.foods;
   });
@@ -18,7 +20,7 @@ function AdminModal() {
   const selectedItems = items.filter((item) => {
     return item.checked === true;
   });
-  const dispatch = useDispatch();
+  const id = selectedItems[0]?._id;
 
   return (
     <div className="adminmodal d-flex flex-sm-row-reverse ">
@@ -32,7 +34,7 @@ function AdminModal() {
       ) : null}
       {selectedItems.length > 0 ? (
         <button
-          onClick={() => dispatch(deleteCard())}
+          onClick={() => dispatch(deleteCard(id))}
           type="button"
           className="btn btn-danger">
           Delete card

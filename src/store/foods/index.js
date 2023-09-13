@@ -37,19 +37,20 @@ export const toggleChecked = (_id) => async (dispatch) => {
     payload: _id,
   });
 };
-export const deleteCard = () => {
-  return {
-    type: DELETE_CARD,
-  };
+export const deleteCard = (id) => async (dispatch) => {
+  const resp = await api.delete(`items/${id}`);
+  if (resp.status !== 200) {
+  }
+  return dispatch({
+    type: GET_FOOD,
+  });
 };
-export const editCard = ({ newname, newprice, newimg, _id }) => {
-  return {
-    type: EDIT_CARD,
-    payload: {
-      newname: newname,
-      newimg: newimg,
-      newprice: newprice,
-      _id: _id,
-    },
-  };
+export const editCard = (item, _id) => async (dispatch) => {
+  const response = await api.put(`items/${_id}`, item);
+  if (response.status !== 200) {
+    return;
+  }
+  return dispatch({
+    type: GET_FOOD,
+  });
 };
