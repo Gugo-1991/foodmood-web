@@ -4,6 +4,7 @@ import {
   DELETE_CARD,
   EDIT_CARD,
   GET_FOOD,
+  REFRESH,
 } from "./type";
 import api from "../../api/foodmoodApi";
 
@@ -45,12 +46,13 @@ export const deleteCard = (id) => async (dispatch) => {
     type: GET_FOOD,
   });
 };
+
 export const editCard = (item, _id) => async (dispatch) => {
   const response = await api.put(`items/${_id}`, item);
   if (response.status !== 200) {
     return;
   }
   return dispatch({
-    type: GET_FOOD,
+    type: REFRESH,
   });
 };

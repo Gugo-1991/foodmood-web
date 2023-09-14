@@ -4,6 +4,7 @@ import {
   DELETE_CARD,
   EDIT_CARD,
   GET_FOOD,
+  REFRESH,
 } from "./type";
 const initionalState = {
   foods: [],
@@ -24,6 +25,9 @@ const FoodsReducer = (state = initionalState, action) => {
         ...state,
         foods: [...state.foods, item],
       };
+    case REFRESH:
+      window.location.reload();
+      return { ...state };
 
     case CHANGE_CHECKED:
       const updatedContents = state.foods.map((content) => {
@@ -47,26 +51,6 @@ const FoodsReducer = (state = initionalState, action) => {
       return {
         ...state,
         foods: deleteCard,
-      };
-    case EDIT_CARD:
-      const { newname, newimg, newprice, _id } = action.payload;
-      const editfood = state.foods.map((content) => {
-        console.log(editfood);
-        if (content._id === action.payload._id) {
-          return {
-            ...content,
-            name: newname,
-            _id: _id,
-            img: newimg,
-            price: newprice,
-            checked: true,
-          };
-        }
-        return content;
-      });
-      return {
-        ...state,
-        foods: editfood,
       };
 
     default:
