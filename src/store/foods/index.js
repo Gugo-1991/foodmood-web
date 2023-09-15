@@ -43,7 +43,7 @@ export const deleteCard = (id) => async (dispatch) => {
   if (resp.status !== 200) {
   }
   return dispatch({
-    type: GET_FOOD,
+    type: REFRESH,
   });
 };
 
