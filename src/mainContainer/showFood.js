@@ -1,21 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./showFood/index.css";
 import ContentCreator from "./showFood/contentCreator";
-import { closeModal } from "../store/showmodal";
 
 function Showfood() {
   const foods = useSelector(function (state) {
     return state.foods.foods;
   });
-
   return (
     <>
-      <div className="bg d-grid">
+      <div className="bg d-grid vh-100">
         <div className="page p-3 d-grid ">
           {foods.map((e) => {
             return (
               <ContentCreator
-                id={e.id}
+                _id={e._id}
                 name={e.name}
                 img={e.img}
                 price={e.price}

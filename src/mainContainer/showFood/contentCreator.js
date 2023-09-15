@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import "./index.css";
 import { toggleChecked } from "../../store/foods";
 
-function ContentCreator({ img, name, price, checked, id }) {
+function ContentCreator({ img, name, price, checked, _id }) {
   const dispatch = useDispatch();
   return (
     <div
@@ -21,10 +21,10 @@ function ContentCreator({ img, name, price, checked, id }) {
         <input
           className="check rounded-3"
           key={Math.random()}
-          id={id}
+          id={_id}
           type="checkbox"
           checked={checked}
-          onChange={() => dispatch(toggleChecked(id))}
+          onChange={() => dispatch(toggleChecked(_id))}
         />
       </div>
 

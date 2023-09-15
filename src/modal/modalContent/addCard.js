@@ -1,15 +1,14 @@
 import { Modal } from "react-responsive-modal";
 import React, { Fragment, useState } from "react";
-import "react-responsive-modal/styles.css";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../../store/showmodal";
 import "./index.css";
 import { addFood } from "../../store/foods";
 
 function AddCard() {
-  const [loginModalOpen, setOpen] = useState(true);
+  const [cardModal, setOpen] = useState(true);
 
-  const closeLoginModal = () => setOpen(false);
+  const closeAddcardModal = () => setOpen(false);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -19,9 +18,9 @@ function AddCard() {
   return (
     <Fragment>
       <Modal
-        open={loginModalOpen}
+        open={cardModal}
         onClose={() => {
-          closeLoginModal();
+          closeAddcardModal();
           dispatch(closeModal());
         }}
         center

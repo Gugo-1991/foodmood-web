@@ -34,8 +34,11 @@ const showModalReduser = (state = modal, action) => {
 
     case SHOW_ADD_USERS:
       return {
-        ...state,
+        showmodal: false,
         showAddUsersModal: true,
+        showSignUpNewUser: false,
+        showLoginModal: false,
+        showEditModal: false,
       };
     case SHOW_SIGN_UP:
       return {
@@ -44,8 +47,11 @@ const showModalReduser = (state = modal, action) => {
       };
     case SHOW_LOGIN_MODAL:
       return {
-        ...state,
+        showmodal: false,
+        showAddUsersModal: false,
+        showSignUpNewUser: false,
         showLoginModal: true,
+        showEditModal: false,
       };
     case SHOW_EDIT_MODAL:
       return {
