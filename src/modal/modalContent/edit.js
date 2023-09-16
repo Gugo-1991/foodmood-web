@@ -12,14 +12,14 @@ function EditMidal() {
   const dispatch = useDispatch();
 
   const item = useSelector(function (state) {
-    return state.foods.foods.filter((e) => {
+    return state.foods.foods.find((e) => {
       return e.checked === true;
     });
   });
-  const eItem = item[0];
-  const [newname, setNewname] = useState(eItem.name);
-  const [newprice, setNewprice] = useState(eItem.price);
-  const [newimg, setNewimg] = useState(eItem.img);
+
+  const [newname, setNewname] = useState(item.name);
+  const [newprice, setNewprice] = useState(item.price);
+  const [newimg, setNewimg] = useState(item.img);
   const [change, setchange] = useState(true);
 
   const editItem = {
@@ -92,7 +92,7 @@ function EditMidal() {
                 <button
                   className="yes rounded-3"
                   onClick={() => {
-                    dispatch(editCard(editItem, item[0]._id));
+                    dispatch(editCard(editItem, item._id));
                     dispatch(closeModal());
                   }}>
                   Yes
