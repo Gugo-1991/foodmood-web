@@ -1,5 +1,5 @@
 import "./app.css";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import Fixheader from "./header/header/headerCreator";
 import ShowFood from "./mainContainer/showFood";
 import { useDispatch, useSelector } from "react-redux";

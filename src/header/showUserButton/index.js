@@ -7,7 +7,7 @@ function ShowUserButton() {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="adminmodal d-flex ">
+      <div className="adminmodal d-flex flex-md-row-reverse ">
         <UseerCard />
         <button
           type="button"
