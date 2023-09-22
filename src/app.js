@@ -12,7 +12,8 @@ import Login from "./modal/modalContent/login";
 import SignUp from "./modal/modalContent/signUp";
 import { queryUsers } from ".";
 import { getFood } from "./store/foods";
-
+import AllUsers from "./modal/modalContent/allUsers";
+import api from "./api/foodmoodApi";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
   const isLogin = localStorage.getItem("isLogin");
   queryUsers();
   const {
+    showAllUsers,
     showmodal,
     showAddUsersModal,
     showEditModal,
@@ -30,13 +32,13 @@ function App() {
   } = useSelector(function (state) {
     return state.modal;
   });
-  console.log(
-    showmodal,
-    showAddUsersModal,
-    showEditModal,
-    showLoginModal,
-    showSignUpNewUser
-  );
+  // console.log(
+  //   showmodal,
+  //   showAddUsersModal,
+  //   showEditModal,
+  //   showLoginModal,
+  //   showSignUpNewUser
+  // );
 
   const user = useSelector(function (state) {
     return state.isLogin.isLogin;
@@ -48,7 +50,10 @@ function App() {
       {showmodal ? <AddCard /> : null}
       {showAddUsersModal ? <AddUsers /> : null}
       {showEditModal ? <EditMidal /> : null}
-      {!isLogin && showLoginModal ? <Showmodal Children={<Login />} /> : null}
+      {showAllUsers ? <Showmodal Children={<AllUsers />} /> : null}
+      {!isLogin && showLoginModal ? (
+        <Showmodal style={`${"rounded-3 w-25"}`} Children={<Login />} />
+      ) : null}
       {!isLogin && showSignUpNewUser ? (
         <Showmodal Children={<SignUp />} />
       ) : null}

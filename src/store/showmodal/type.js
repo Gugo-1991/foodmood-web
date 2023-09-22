@@ -5,3 +5,4 @@ export const SHOW_SIGN_UP = "SHOW_SIGN_UP";
 export const SHOW_LOGIN_MODAL = "SHOW_LOGIN_MODAL";
 export const SHOW_EDIT_MODAL = "SHOW_EDIT_MODAL";
 export const CLOSE_LOGIN_MODAL = "CLOSE_LOGIN_MODAL";
+export const ALL_USERS = "ALL_USERS";

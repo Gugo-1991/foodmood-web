@@ -4,7 +4,7 @@ import React from "react";
 import { showLoginModal } from "../../store/showmodal";
 import { useDispatch } from "react-redux";
 
-function Showmodal({ Children }) {
+function Showmodal({ Children, style }) {
   const dispatch = useDispatch();
   const close = () => {
     dispatch(showLoginModal());
@@ -16,7 +16,7 @@ function Showmodal({ Children }) {
         onClose={close}
         center
         classNames={{
-          modal: "rounded-3 w-25",
+          modal: style,
           overlayAnimationIn: "customEnterOverlayAnimation",
           overlayAnimationOut: "customLeaveOverlayAnimation",
           modalAnimationIn: "customEnterModalAnimation",
