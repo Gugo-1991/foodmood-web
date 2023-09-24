@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./index.css";
-import { IconName } from "react-icons/bs";
-import AllUsers from "../../modal/modalContent/allUsers";
 import { useDispatch } from "react-redux";
-import { showAllUsersModal } from "../../store/showmodal";
+import { showAllItems, showAllUsersModal } from "../../store/showmodal";
 function AdminInfoCreator() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -37,7 +35,13 @@ function AdminInfoCreator() {
               </button>
             </li>
             <li className="menu-item">
-              <button>All Items</button>
+              <button
+                onClick={() => {
+                  handleOpen(false);
+                  dispatch(showAllItems());
+                }}>
+                All Items
+              </button>
             </li>
           </ul>
         ) : null}

@@ -6,9 +6,11 @@ import {
   SHOW_LOGIN_MODAL,
   SHOW_EDIT_MODAL,
   ALL_USERS,
+  ALL_ITEMS,
 } from "./type";
 
 const modal = {
+  showAllItems: false,
   showAllUsers: false,
   showmodal: false,
   showAddUsersModal: false,
@@ -28,6 +30,7 @@ const showModalReduser = (state = modal, action) => {
       return {
         ...state,
         showAllUsers: false,
+        showAllItems: false,
         showmodal: false,
         showAddUsersModal: false,
         showSignUpNewUser: false,
@@ -39,6 +42,7 @@ const showModalReduser = (state = modal, action) => {
       return {
         showAllUsers: false,
         showmodal: false,
+        showAllItems: false,
         showAddUsersModal: true,
         showSignUpNewUser: false,
         showLoginModal: false,
@@ -53,6 +57,7 @@ const showModalReduser = (state = modal, action) => {
       return {
         showAllUsers: false,
         showmodal: false,
+        showAllItems: false,
         showAddUsersModal: false,
         showSignUpNewUser: false,
         showLoginModal: true,
@@ -66,7 +71,18 @@ const showModalReduser = (state = modal, action) => {
     case ALL_USERS:
       return {
         showmodal: false,
+        showAllItems: false,
         showAllUsers: true,
+        showAddUsersModal: false,
+        showSignUpNewUser: false,
+        showLoginModal: false,
+        showEditModal: false,
+      };
+    case ALL_ITEMS:
+      return {
+        showmodal: false,
+        showAllUsers: false,
+        showAllItems: true,
         showAddUsersModal: false,
         showSignUpNewUser: false,
         showLoginModal: false,

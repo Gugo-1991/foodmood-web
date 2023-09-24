@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import api from "../../api/foodmoodApi";
 import TableComponent from "../../getInformation/tableComponent";
 
-function AllUsers() {
+function AllItems() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await api.get("/Users");
+        const response = await api.get("/items");
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -26,17 +26,14 @@ function AllUsers() {
     },
 
     {
-      Header: "Second Name",
-      accessor: "secondName",
+      Header: "Category",
+      accessor: "category",
     },
     {
-      Header: "Email",
-      accessor: "email",
+      Header: "Id...",
+      accessor: "_id",
     },
-    {
-      Header: "Role",
-      accessor: "role",
-    },
+
     {
       Header: "Created Data",
       accessor: "createdDate",
@@ -45,10 +42,10 @@ function AllUsers() {
 
   return (
     <div className="App">
-      <h1>All Users</h1>
+      <h1>All Items</h1>
       <TableComponent columns={columns} data={data} />
     </div>
   );
 }
 
-export default AllUsers;
+export default AllItems;
