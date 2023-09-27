@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom"; // Update import path
+import { createRoot } from "react-dom";
 import App from "./app";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -11,7 +11,7 @@ export const queryUsers = async () => {
   try {
     const response = await api.post("users/initFirstUser");
   } catch (error) {}
-}; // Replace the comma with a semicolon
+};
 
 root.render(
   <Provider store={store}>

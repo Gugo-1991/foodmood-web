@@ -5,9 +5,13 @@ import {
   SHOW_SIGN_UP,
   SHOW_LOGIN_MODAL,
   SHOW_EDIT_MODAL,
+  ALL_USERS,
+  ALL_ITEMS,
 } from "./type";
 
 const modal = {
+  showAllItems: false,
+  showAllUsers: false,
   showmodal: false,
   showAddUsersModal: false,
   showSignUpNewUser: false,
@@ -25,6 +29,8 @@ const showModalReduser = (state = modal, action) => {
     case CLOSE_MODAL:
       return {
         ...state,
+        showAllUsers: false,
+        showAllItems: false,
         showmodal: false,
         showAddUsersModal: false,
         showSignUpNewUser: false,
@@ -34,7 +40,9 @@ const showModalReduser = (state = modal, action) => {
 
     case SHOW_ADD_USERS:
       return {
+        showAllUsers: false,
         showmodal: false,
+        showAllItems: false,
         showAddUsersModal: true,
         showSignUpNewUser: false,
         showLoginModal: false,
@@ -47,7 +55,9 @@ const showModalReduser = (state = modal, action) => {
       };
     case SHOW_LOGIN_MODAL:
       return {
+        showAllUsers: false,
         showmodal: false,
+        showAllItems: false,
         showAddUsersModal: false,
         showSignUpNewUser: false,
         showLoginModal: true,
@@ -57,6 +67,26 @@ const showModalReduser = (state = modal, action) => {
       return {
         ...state,
         showEditModal: true,
+      };
+    case ALL_USERS:
+      return {
+        showmodal: false,
+        showAllItems: false,
+        showAllUsers: true,
+        showAddUsersModal: false,
+        showSignUpNewUser: false,
+        showLoginModal: false,
+        showEditModal: false,
+      };
+    case ALL_ITEMS:
+      return {
+        showmodal: false,
+        showAllUsers: false,
+        showAllItems: true,
+        showAddUsersModal: false,
+        showSignUpNewUser: false,
+        showLoginModal: false,
+        showEditModal: false,
       };
 
     default:

@@ -5,6 +5,8 @@ import {
   SHOW_ADD_USERS,
   SHOW_LOGIN_MODAL,
   SHOW_SIGN_UP,
+  ALL_USERS,
+  ALL_ITEMS,
 } from "./type";
 
 export const modalIsShow = () => {
@@ -35,5 +37,15 @@ export const showLoginModal = () => {
 export const showEditModal = () => {
   return {
     type: SHOW_EDIT_MODAL,
+  };
+};
+export const showAllUsersModal = () => {
+  return {
+    type: ALL_USERS,
+  };
+};
+export const showAllItems = () => {
+  return {
+    type: ALL_ITEMS,
   };
 };
