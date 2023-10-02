@@ -7,6 +7,7 @@ import {
   SHOW_SIGN_UP,
   ALL_USERS,
   ALL_ITEMS,
+  BALANCE,
 } from "./type";
 
 export const modalIsShow = () => {
@@ -47,5 +48,10 @@ export const showAllUsersModal = () => {
 export const showAllItems = () => {
   return {
     type: ALL_ITEMS,
+  };
+};
+export const showBalanceModal = () => {
+  return {
+    type: BALANCE,
   };
 };

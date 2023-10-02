@@ -7,9 +7,11 @@ import {
   SHOW_EDIT_MODAL,
   ALL_USERS,
   ALL_ITEMS,
+  BALANCE,
 } from "./type";
 
 const modal = {
+  showBalanceModal: false,
   showAllItems: false,
   showAllUsers: false,
   showmodal: false,
@@ -29,6 +31,7 @@ const showModalReduser = (state = modal, action) => {
     case CLOSE_MODAL:
       return {
         ...state,
+        showBalanceModal: false,
         showAllUsers: false,
         showAllItems: false,
         showmodal: false,
@@ -40,28 +43,18 @@ const showModalReduser = (state = modal, action) => {
 
     case SHOW_ADD_USERS:
       return {
-        showAllUsers: false,
-        showmodal: false,
-        showAllItems: false,
+        ...state,
         showAddUsersModal: true,
-        showSignUpNewUser: false,
-        showLoginModal: false,
-        showEditModal: false,
       };
     case SHOW_SIGN_UP:
       return {
         ...state,
-        showSignUpNewUser: !modal.showSignUpNewUser,
+        showSignUpNewUser: true,
       };
     case SHOW_LOGIN_MODAL:
       return {
-        showAllUsers: false,
-        showmodal: false,
-        showAllItems: false,
-        showAddUsersModal: false,
-        showSignUpNewUser: false,
+        ...state,
         showLoginModal: true,
-        showEditModal: false,
       };
     case SHOW_EDIT_MODAL:
       return {
@@ -70,23 +63,18 @@ const showModalReduser = (state = modal, action) => {
       };
     case ALL_USERS:
       return {
-        showmodal: false,
-        showAllItems: false,
+        ...state,
         showAllUsers: true,
-        showAddUsersModal: false,
-        showSignUpNewUser: false,
-        showLoginModal: false,
-        showEditModal: false,
       };
     case ALL_ITEMS:
       return {
-        showmodal: false,
-        showAllUsers: false,
+        ...state,
         showAllItems: true,
-        showAddUsersModal: false,
-        showSignUpNewUser: false,
-        showLoginModal: false,
-        showEditModal: false,
+      };
+    case BALANCE:
+      return {
+        ...state,
+        showBalanceModal: true,
       };
 
     default:
