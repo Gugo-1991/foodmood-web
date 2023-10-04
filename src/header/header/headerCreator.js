@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import "./style.css";
 import AdminModal from "../showAdminButtons";
-import Time from "./signUp/clock";
 import ShowUserButton from "../showUserButton";
 import UserProfile from "../showAdminButtons/userProfile";
 

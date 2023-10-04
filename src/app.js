@@ -18,7 +18,6 @@ import Balance from "./modal/balance";
 
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getFood());
   }, []);
@@ -37,13 +36,6 @@ function App() {
   } = useSelector(function (state) {
     return state.modal;
   });
-  // console.log(
-  //   showmodal,
-  //   showAddUsersModal,
-  //   showEditModal,
-  //   showLoginModal,
-  //   showSignUpNewUser
-  // );
 
   const user = useSelector(function (state) {
     return state.isLogin.isLogin;
