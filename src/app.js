@@ -14,6 +14,7 @@ import { queryUsers } from ".";
 import { getFood } from "./store/foods";
 import AllUsers from "./modal/modalContent/allUsers";
 import AllItems from "./modal/modalContent/allItems";
+import Balance from "./modal/balance";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
   const isLogin = localStorage.getItem("isLogin");
   queryUsers();
   const {
+    showBalanceModal,
     showAllItems,
     showAllUsers,
     showmodal,
@@ -34,13 +36,6 @@ function App() {
   } = useSelector(function (state) {
     return state.modal;
   });
-  // console.log(
-  //   showmodal,
-  //   showAddUsersModal,
-  //   showEditModal,
-  //   showLoginModal,
-  //   showSignUpNewUser
-  // );
 
   const user = useSelector(function (state) {
     return state.isLogin.isLogin;
@@ -54,6 +49,7 @@ function App() {
       {showEditModal ? <EditMidal /> : null}
       {showAllUsers ? <Showmodal Children={<AllUsers />} /> : null}
       {showAllItems ? <Showmodal Children={<AllItems />} /> : null}
+      {showBalanceModal ? <Showmodal Children={<Balance />} /> : null}
       {!isLogin && showLoginModal ? (
         <Showmodal style={`${"rounded-3 w-25"}`} Children={<Login />} />
       ) : null}

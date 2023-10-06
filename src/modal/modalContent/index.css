@@ -109,3 +109,19 @@ input:required:invalid {
   height: auto;
   gap: 1rem;
 }
+.userBalance {
+  padding: 2rem;
+  gap: 2rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.pricebutton {
+  width: 2rem;
+}
+.priceBlock {
+  gap: 1rem;
+}

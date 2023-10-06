@@ -10,6 +10,8 @@ export const loginstate =
       if (response.status === 200) {
         localStorage.setItem("isLogin", response.data.role);
         localStorage.setItem("userName", response.data.name);
+        localStorage.setItem("userId", response.data.id);
+
         dispatch({
           type: OPEN_USER,
         });
