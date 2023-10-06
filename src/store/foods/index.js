@@ -1,11 +1,4 @@
-import {
-  ADD_FOOD,
-  CHANGE_CHECKED,
-  DELETE_CARD,
-  EDIT_CARD,
-  GET_FOOD,
-  REFRESH,
-} from "./type";
+import { ADD_FOOD, CHANGE_CHECKED, GET_FOOD, REFRESH } from "./type";
 import api from "../../api/foodmoodApi";
 
 export const addFood = (item) => async (dispatch) => {
@@ -55,4 +48,16 @@ export const editCard = (item, _id) => async (dispatch) => {
   return dispatch({
     type: REFRESH,
   });
+};
+
+export const addBalance = async (userId, value) => {
+  try {
+    const response = await api.put(`/accounts/${userId}/${value}`);
+    if (response.status === 200) {
+    } else {
+      console.log("Error updating balance");
+    }
+  } catch (error) {
+    console.error("Error updating balance:", error);
+  }
 };

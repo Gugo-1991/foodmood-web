@@ -1,27 +1,16 @@
 import React, { Fragment, useState } from "react";
 import "./modalContent/index.css";
-import api from "../api/foodmoodApi";
 import { closeModal } from "../store/showmodal";
 import { useDispatch } from "react-redux";
+import { addBalance } from "../store/foods";
 
 function Balance() {
   const [value, setValue] = useState("");
   const userId = localStorage.getItem("userId");
   const dispatch = useDispatch();
 
-  const addBalance = async () => {
-    try {
-      const response = await api.put(`/accounts/${userId}/${value}`);
-      if (response.status === 200) {
-      } else {
-        console.log("Error updating balance");
-      }
-    } catch (error) {
-      console.error("Error updating balance:", error);
-    }
-  };
-  const handleClose = () => {
-    addBalance();
+  const handleClose = async () => {
+    await addBalance(userId, value);
     dispatch(closeModal());
     window.location.reload();
   };
