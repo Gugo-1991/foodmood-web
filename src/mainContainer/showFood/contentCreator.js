@@ -32,10 +32,17 @@ function ContentCreator({ img, name, price, checked, _id }) {
         {name}
       </div>
 
-      <div key={Math.random()} className="price">
+      <div
+        key={Math.random()}
+        className="price d-flex justify-content-between ">
         <span key={Math.random()} className="price">
           $ {price}
         </span>
+        <div className="">
+          <button className=" basket rounded-3 border border-warning">
+            add
+          </button>
+        </div>
       </div>
     </div>
   );

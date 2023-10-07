@@ -8,3 +8,4 @@ export const CLOSE_LOGIN_MODAL = "CLOSE_LOGIN_MODAL";
 export const ALL_USERS = "ALL_USERS";
 export const ALL_ITEMS = "ALL_ITEMS";
 export const BALANCE = "BALANCE";
+export const BASKET = "BASKET";

@@ -15,6 +15,7 @@ import { getFood } from "./store/foods";
 import AllUsers from "./modal/modalContent/allUsers";
 import AllItems from "./modal/modalContent/allItems";
 import Balance from "./modal/balance";
+import Basket from "./modal/modalContent/basket";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
   const isLogin = localStorage.getItem("isLogin");
   queryUsers();
   const {
+    showBasketModal,
     showBalanceModal,
     showAllItems,
     showAllUsers,
@@ -50,6 +52,7 @@ function App() {
       {showAllUsers ? <Showmodal Children={<AllUsers />} /> : null}
       {showAllItems ? <Showmodal Children={<AllItems />} /> : null}
       {showBalanceModal ? <Showmodal Children={<Balance />} /> : null}
+      {showBasketModal ? <Showmodal Children={<Basket />} /> : null}
       {!isLogin && showLoginModal ? (
         <Showmodal style={`${"rounded-3 w-25"}`} Children={<Login />} />
       ) : null}

@@ -8,6 +8,7 @@ import {
   ALL_USERS,
   ALL_ITEMS,
   BALANCE,
+  BASKET,
 } from "./type";
 
 export const modalIsShow = () => {
@@ -53,5 +54,11 @@ export const showAllItems = () => {
 export const showBalanceModal = () => {
   return {
     type: BALANCE,
+  };
+};
+
+export const showBasketModal = () => {
+  return {
+    type: BASKET,
   };
 };

@@ -6,8 +6,7 @@ export const addFood = (item) => async (dispatch) => {
   if (response.status !== 200) {
     return;
   }
-  // const food = dispatch(getFood());
-  // console.log(food);
+
   return dispatch({
     type: ADD_FOOD,
     payload: response.data,
