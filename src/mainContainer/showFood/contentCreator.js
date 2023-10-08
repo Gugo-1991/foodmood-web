@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import "./index.css";
 import { toggleChecked } from "../../store/foods";
+import { basketCreator, basketsItems } from "../../modal/modalContent/basket";
 
 function ContentCreator({ img, name, price, checked, _id }) {
   const dispatch = useDispatch();
@@ -39,7 +40,9 @@ function ContentCreator({ img, name, price, checked, _id }) {
           $ {price}
         </span>
         <div className="">
-          <button className=" basket rounded-3 border border-warning">
+          <button
+            className=" basket rounded-3 border border-warning"
+            onClick={() => basketCreator(_id, price, name)}>
             add
           </button>
         </div>

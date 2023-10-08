@@ -10,7 +10,6 @@ function UserProfile() {
   const isLogin = localStorage.getItem("isLogin");
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
-
   return (
     <Fragment>
       <div className="total d-flex ">

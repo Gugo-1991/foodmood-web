@@ -1,10 +1,4 @@
-import {
-  ADD_FOOD,
-  CHANGE_CHECKED,
-  DELETE_CARD,
-  GET_FOOD,
-  REFRESH,
-} from "./type";
+import { ADD_FOOD, CHANGE_CHECKED, GET_FOOD, REFRESH } from "./type";
 const initionalState = {
   foods: [],
 };
