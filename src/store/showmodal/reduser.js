@@ -8,9 +8,11 @@ import {
   ALL_USERS,
   ALL_ITEMS,
   BALANCE,
+  BASKET,
 } from "./type";
 
 const modal = {
+  showBasketModal: false,
   showBalanceModal: false,
   showAllItems: false,
   showAllUsers: false,
@@ -31,6 +33,7 @@ const showModalReduser = (state = modal, action) => {
     case CLOSE_MODAL:
       return {
         ...state,
+        showBasketModal: false,
         showBalanceModal: false,
         showAllUsers: false,
         showAllItems: false,
@@ -75,6 +78,11 @@ const showModalReduser = (state = modal, action) => {
       return {
         ...state,
         showBalanceModal: true,
+      };
+    case BASKET:
+      return {
+        ...state,
+        showBasketModal: true,
       };
 
     default:

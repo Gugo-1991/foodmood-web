@@ -125,3 +125,20 @@ input::-webkit-inner-spin-button {
 .priceBlock {
   gap: 1rem;
 }
+.basketCard {
+  border-radius: 25%;
+  width: 25rem;
+  height: 3rem;
+  background-color: rgb(70, 61, 61);
+}
+.form {
+  color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+}
+.totalPrice {
+  border-radius: 25%;
+  background-color: rgb(184, 217, 184);
+}

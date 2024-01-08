@@ -1,11 +1,4 @@
-import {
-  ADD_FOOD,
-  CHANGE_CHECKED,
-  DELETE_CARD,
-  EDIT_CARD,
-  GET_FOOD,
-  REFRESH,
-} from "./type";
+import { ADD_FOOD, CHANGE_CHECKED, GET_FOOD, REFRESH } from "./type";
 const initionalState = {
   foods: [],
 };
@@ -42,15 +35,6 @@ const FoodsReducer = (state = initionalState, action) => {
       return {
         ...state,
         foods: updatedContents,
-      };
-
-    case DELETE_CARD:
-      const deleteCard = state.foods.filter(
-        (content) => content.checked === false
-      );
-      return {
-        ...state,
-        foods: deleteCard,
       };
 
     default:
