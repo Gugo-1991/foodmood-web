@@ -1,10 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
-import { useDispatch } from "react-redux";
-import { showBalanceModal } from "../../store/showmodal";
 import api from "../../api/foodmoodApi";
-function UserBalanceCreator() {
-  const dispatch = useDispatch();
+const UserBalanceCreator = () => {
   const userId = localStorage.getItem("userId");
   const [balance, setBalance] = useState(null);
 
@@ -27,17 +24,10 @@ function UserBalanceCreator() {
   }, [userId]);
 
   return (
-    <Fragment>
-      <div className="balancePlace d-flex align-items-end flex-column">
-        <h5 className="balance">Main Balance-{"$" + balance} </h5>
-        <button
-          onClick={() => dispatch(showBalanceModal())}
-          className="deposit btn btn-success">
-          DEPOSIT
-        </button>
-      </div>
-    </Fragment>
+    <div className="balancePlace d-flex align-items-end flex-column">
+      <h5 className="balance">Main Balance-{"$" + balance} </h5>
+    </div>
   );
-}
+};
 
 export default UserBalanceCreator;

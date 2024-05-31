@@ -7,6 +7,7 @@ export const loginstate =
   async (dispatch) => {
     try {
       const response = await api.post("/auth/login", { email, password });
+      console.log(response);
       if (response.status === 200) {
         localStorage.setItem("isLogin", response.data.role);
         localStorage.setItem("userName", response.data.name);

@@ -6,7 +6,6 @@ import { showLoginModal } from "../../store/showmodal";
 function ShowUserButton() {
   const dispatch = useDispatch();
   return (
-    <>
       <div className="adminmodal d-flex flex-md-row-reverse ">
         <UseerCard />
         <button
@@ -20,7 +19,6 @@ function ShowUserButton() {
           EXIT
         </button>
       </div>
-    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import IsLoginReducer from "./users/reducer";
 import FoodsReducer from "./foods/reducer";
@@ -11,7 +11,7 @@ const store = createStore(
     isLogin: IsLoginReducer,
     foods: FoodsReducer,
   }),
-  compose(applyMiddleware(thunk), composeWithDevTools())
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 export default store;
