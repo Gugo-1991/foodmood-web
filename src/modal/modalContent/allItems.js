@@ -10,7 +10,7 @@ function AllItems() {
       try {
         const response = await api.get("/items");
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -42,7 +42,7 @@ function AllItems() {
 
   return (
     <div className="App">
-      <h1>All Items</h1>
+      <h1>All Itemsccc</h1>
       <TableComponent columns={columns} data={data} />
     </div>
   );

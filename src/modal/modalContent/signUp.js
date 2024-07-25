@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 
 import "react-responsive-modal/styles.css";
 import { useDispatch } from "react-redux";
-import { closeModal, showLoginModal } from "../../store/showmodal";
+import { closeModal,  } from "../../store/showmodal";
 import "./index.css";
 import { addUser } from "../../store/users";
 
@@ -14,7 +14,7 @@ function SignUp() {
   const dispatch = useDispatch();
   const close = () => {
     dispatch(closeModal());
-    dispatch(showLoginModal());
+    // dispatch(showLoginModal());
   };
   const submitAddUser = (user) => {
     if (

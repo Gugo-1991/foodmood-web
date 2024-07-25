@@ -2,21 +2,25 @@ import React from "react";
 import { createRoot } from "react-dom";
 import App from "./app";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import api from "./api/foodmoodApi";
-
+import { ModalProvider } from "./context/modal/modalProvider";
+import { BrowserRouter } from "react-router-dom";
+import { store } from "./app/store";
 const container = document.getElementById("root");
 const root = createRoot(container);
-export const queryUsers = async () => {
-  try {
-    const response = await api.post("users/initFirstUser");
-  } catch (error) {}
-};
+// export const queryUsers = async () => {
+//   try {
+//     const response = await api.post("users/initFirstUser");
+//   } catch (error) {}
+// };
 
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <ModalProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ModalProvider>
     </React.StrictMode>
   </Provider>
 );
