@@ -1,12 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./index.css";
-import "react-responsive-modal/styles.css";
 
 function HomePage() {
   return (
-    <Fragment>
-      <div className=" bg d-flex vh-100"></div>
-    </Fragment>
+    <div className=" bg d-flex justify-content-center vh-100">
+      <div className=" d-flex   align-items-center   ">
+        dvsdvdsfvfdsvdfsvdfsv
+      </div>
+    </div>
   );
 }
 

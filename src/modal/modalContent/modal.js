@@ -1,7 +1,7 @@
 import { Modal } from "react-responsive-modal";
 import "./index.css";
 import React from "react";
-import { closeModal, showLoginModal } from "../../store/showmodal";
+import { closeModal } from "../../store/showmodal";
 import { useDispatch } from "react-redux";
 
 function Showmodal({ Children, style }) {
@@ -10,7 +10,6 @@ function Showmodal({ Children, style }) {
     dispatch(closeModal());
   };
   return (
-    <>
       <Modal
         open={true}
         onClose={close}
@@ -25,7 +24,6 @@ function Showmodal({ Children, style }) {
         animationDuration={800}>
         {Children}
       </Modal>
-    </>
   );
 }
 export default Showmodal;

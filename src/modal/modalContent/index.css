@@ -77,15 +77,14 @@ input:required:invalid {
 .no {
   background-color: red;
 }
-.main {
-  color: red;
+/* .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 25rem;
   height: 25rem;
-}
+} */
 
 .loginform {
   gap: 0.7rem;
@@ -104,9 +103,15 @@ input:required:invalid {
   width: 20rem;
   height: auto;
 }
-.add {
-  width: 20rem;
+.cardModal 
+.editCard
+.addUser
+.addBalance{
   height: auto;
+}
+.newUserModal{
+  width: 30rem;
+  height: 30rem;
   gap: 1rem;
 }
 .userBalance {

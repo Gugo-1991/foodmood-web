@@ -1,66 +1,70 @@
 import "./app.css";
-import { useEffect } from "react";
-import Fixheader from "./header/header/headerCreator";
 import ShowFood from "./mainContainer/showFood";
-import { useDispatch, useSelector } from "react-redux";
-import AddUsers from "./modal/modalContent/addUsers";
-import HomePage from "./homepage/homePage";
-import EditMidal from "./modal/modalContent/edit";
-import AddCard from "./modal/modalContent/addCard";
-import Showmodal from "./modal/modalContent/modal";
-import Login from "./modal/modalContent/login";
-import SignUp from "./modal/modalContent/signUp";
-import { queryUsers } from ".";
-import { getFood } from "./store/foods";
-import AllUsers from "./modal/modalContent/allUsers";
-import AllItems from "./modal/modalContent/allItems";
-import Balance from "./modal/balance";
-import Basket from "./modal/modalContent/basket";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import Header from "./header/Header";
+import { useDispatch } from "react-redux";
+import { setUser } from "./app/authSlice";
+import { useEffect } from "react";
+import routes from "./routes";
+
+const ProtectedRoute = ({ children, roles }) => {
+  const xUser = localStorage.getItem("x-user");
+
+  if (!xUser) {
+    return null;
+  }
+
+  if (roles && roles.length > 0 && xUser) {
+    const userRole = JSON.parse(xUser)?.role;
+    if (roles.indexOf(userRole) > -1) {
+      return children;
+    } else {
+      return null;
+    }
+  }
+
+  return children;
+};
+
+const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getFood());
-  }, []);
+  const xUser = localStorage.getItem("x-user");
+  if (xUser) {
+    dispatch(setUser(JSON.parse(xUser)));
+  }
 
-  const isLogin = localStorage.getItem("isLogin");
-  queryUsers();
-  const {
-    showBasketModal,
-    showBalanceModal,
-    showAllItems,
-    showAllUsers,
-    showmodal,
-    showAddUsersModal,
-    showEditModal,
-    showLoginModal,
-    showSignUpNewUser,
-  } = useSelector(function (state) {
-    return state.modal;
-  });
 
-  const user = useSelector(function (state) {
-    return state.isLogin.isLogin;
-  });
   return (
     <>
-      <Fixheader />
-      {isLogin ? <ShowFood /> : <HomePage />}
-      {showmodal ? <AddCard /> : null}
-      {showAddUsersModal ? <AddUsers /> : null}
-      {showEditModal ? <EditMidal /> : null}
-      {showAllUsers ? <Showmodal Children={<AllUsers />} /> : null}
-      {showAllItems ? <Showmodal Children={<AllItems />} /> : null}
-      {showBalanceModal ? <Showmodal Children={<Balance />} /> : null}
-      {showBasketModal ? <Showmodal Children={<Basket />} /> : null}
-      {!isLogin && showLoginModal ? (
-        <Showmodal style={`${"rounded-3 w-25"}`} Children={<Login />} />
-      ) : null}
-      {!isLogin && showSignUpNewUser ? (
-        <Showmodal Children={<SignUp />} />
-      ) : null}
+      <Header />
+      <Routes>
+        {routes.map(
+          (
+            { isProtected, roles, path,  component: Component },
+            index
+          ) =>
+            isProtected ? (
+              <Route
+                key={`route-${index}`}
+                path={path}
+                element={
+                  <ProtectedRoute roles={roles}>
+                    <Component />
+                  </ProtectedRoute>
+                }
+              />
+            ) : (
+              <Route
+                key={`route-${index}`}
+                path={path}
+                element={<Component />}
+              />
+            )
+        )}
+      </Routes>
     </>
   );
-}
+};
 
 export default App;

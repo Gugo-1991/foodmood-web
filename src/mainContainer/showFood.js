@@ -1,28 +1,19 @@
-import { useSelector } from "react-redux";
+import { useGetAllItemsQuery } from "../api/itemsApi";
+import Card from "./showFood/cardCreator";
 import "./showFood/index.css";
-import ContentCreator from "./showFood/contentCreator";
 
-function Showfood() {
-  const foods = useSelector(function (state) {
-    return state.foods.foods;
-  });
+const Showfood = () => {
+  const { data } = useGetAllItemsQuery();
   return (
-    <>
-      <div className="bg d-grid vh-100">
-        <div className="page p-3 d-grid ">
-          {foods.map((e) => {
-            return (
-              <ContentCreator
-                _id={e._id}
-                name={e.name}
-                img={e.img}
-                price={e.price}
-                checked={e.checked}></ContentCreator>
-            );
-          })}
-        </div>
+    <div className="bg d-grid vh-100">
+      <div className="page p-3 d-grid ">
+        {Array.isArray(data)
+          ? data.map((card) => {
+              return <Card key={card._id} card={card} />;
+            })
+          : null}
       </div>
-    </>
+    </div>
   );
-}
+};
 export default Showfood;
