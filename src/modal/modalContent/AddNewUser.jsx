@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import "react-responsive-modal/styles.css";
 import "./index.css";
@@ -6,9 +5,10 @@ import CustomModal from "../../context/modal/CustomModal";
 import Input from "../../shared/Input";
 import Switch from "../../shared/Switch";
 import Button from "../../shared/Button";
+import { useAddNewUserMutation } from "../../api/userApi";
 
 const AddNewUser = ({ open, modalHandler }) => {
-  const dispatch = useDispatch();
+  const [addUser] = useAddNewUserMutation();
   const [errorMassege, setErrorMassege] = useState("");
   const [newUserValues, setNewUserValues] = useState({
     role: "admin",
@@ -43,8 +43,7 @@ const AddNewUser = ({ open, modalHandler }) => {
       setNewUserValues({ ...user, email: "" });
       return;
     }
-
-    // dispatch(addUser(user));
+    addUser(user);
     modalHandler();
   };
 
@@ -110,10 +109,7 @@ const AddNewUser = ({ open, modalHandler }) => {
             </>
           ) : null}
           <hr />
-          <Button
-            label="ADD USER"
-            onClick={() => submitAddUser(newUserValues)}
-          />
+          <Button label="ADD " onClick={() => submitAddUser(newUserValues)} />
           <Button
             label="CANCEL"
             className="btn-outline-danger mb-2 mt-2"

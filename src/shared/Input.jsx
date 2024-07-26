@@ -10,7 +10,7 @@ const Input = ({
   name,
   required,
   value,
-  defaultValue
+  defaultValue,
 }) => {
   return (
     <div className={`form-group ${containerClass}`}>
@@ -18,7 +18,7 @@ const Input = ({
         <label className={`form-label ${invalidClassLabel}`}>{label}</label>
       )}
       <input
-      defaultValue={defaultValue}
+        defaultValue={defaultValue}
         required={required}
         name={name}
         value={value}
@@ -27,7 +27,7 @@ const Input = ({
         type={type}
         onChange={(e) => onChange(e)}
         disabled={disabled}
-        autoComplete="off"
+        autoComplete={type === "password" ? "new-password" : "off"}
       />
     </div>
   );

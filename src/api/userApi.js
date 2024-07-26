@@ -2,13 +2,16 @@ import { baseApi } from "./api";
 
 const itemsrApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getAllItems: builder.query({
-      query: () => ({ url: "/items" }),
-      providesTags: ["items"],
+    addNewUser: builder.mutation({
+      query: (user) => ({
+        url: `/users`,
+        method: "Post",
+        data: user,
+      }),
+      invalidatesTags: ["users"],
     }),
- 
   }),
   overrideExisting: false,
 });
 
-export const { useGetAllItemsQuery, } = itemsrApi;
+export const { useAddNewUserMutation } = itemsrApi;
