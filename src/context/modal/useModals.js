@@ -4,6 +4,7 @@ import AddBalance from "../../modal/modalContent/AddBalance";
 import AddCard from "../../modal/modalContent/AddCard";
 import AddNewUser from "../../modal/modalContent/AddNewUser";
 import EditCard from "../../modal/modalContent/EditCard";
+import DeleteCard from "../../modal/modalContent/DeleteCard";
 
 const MODAL_KEYS = Object.freeze({
   CONFIRMATION_MODAL: "confirmation-modal",
@@ -108,6 +109,30 @@ export const useAddBalanceModal = (props) => {
   const attachHandler = () => {
     setLocalProps((props) => ({
       ...props,
+    }));
+    open();
+  };
+
+  return { open, isOpen, attachHandler };
+};
+
+export const useDeleteCardModal = (props) => {
+  const [localProps, setLocalProps] = useState({ ...props });
+  const key = MODAL_KEYS.EDIT_CARD;
+  const modal = useMemo(() => () => <DeleteCard {...localProps} />, [localProps]);
+  const { isOpen, open, close } = useModal(key, modal);
+  useEffect(() => {
+    setLocalProps((props) => ({
+      ...props,
+      open: isOpen,
+      modalHandler: close,
+    }));
+  }, [isOpen, close]);
+
+  const attachHandler = (item) => {
+    setLocalProps((props) => ({
+      ...props,
+      item
     }));
     open();
   };

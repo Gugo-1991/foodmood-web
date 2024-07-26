@@ -1,16 +1,19 @@
 import "./index.css";
 import Edit from "../../utils/Pen";
-import { useEditCardModal } from "../../context/modal/useModals";
+import {
+  useEditCardModal,
+  useDeleteCardModal,
+} from "../../context/modal/useModals";
+import Delete from "../../utils/trash";
 const Card = ({ card }) => {
-
   const editCard = useEditCardModal({});
+  const deleteCard = useDeleteCardModal({});
+
   return (
-    <div
-      className={false ? "divcheckedon rounded-3" : "divcheckedof rounded-3"}
-    >
+    <div className={"card-container divcheckedof rounded-3"}>
       <div
         aria-hidden
-        className="img rounded-3"
+        className="img rounded-3 d-flex justify-content-center"
         style={{
           backgroundImage: `url(${
             card.img ||
@@ -18,20 +21,16 @@ const Card = ({ card }) => {
           })`,
         }}
       >
-        {/* <input
-          className="check rounded-3"
-          id={_id}
-          type="checkbox"
-          checked={checked}
-          // onChange={() => dispatch(toggleChecked(_id))}
-        /> */}
+        <div className="actions align-items-center  ">
+          <Delete onClick={() => deleteCard.attachHandler({ ...card })} />
+          <Edit onClick={() => editCard.attachHandler({ ...card })} />
+        </div>
       </div>
 
       <div className="name">{card.name ?? ""}</div>
 
-      <div className="price d-flex justify-content-between ">
+      <div className="price d-flex justify-content-between">
         <span className="price">$ {card?.price ?? ""}</span>
-        <Edit message="Edit" onClick={() => editCard.attachHandler({...card})} />
       </div>
     </div>
   );

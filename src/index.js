@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./app";
 import { Provider } from "react-redux";
 import { ModalProvider } from "./context/modal/modalProvider";

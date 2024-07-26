@@ -40,14 +40,10 @@
   text-align: left;
   padding: 10px;
   display: flex;
-  width: 180px;
-  height: auto;
-  flex-direction: column-reverse;
   flex-shrink: 0;
   color: #232968;
   font-size: 14px;
   font-family: Roboto;
-  line-height: 20px;
 }
 .price {
   padding: 5px;
@@ -85,4 +81,13 @@
 .basket:hover {
   background-color: rgb(239, 239, 115);
   color: rgb(149, 117, 117);
+}
+
+
+.card-container .actions {
+  display: none;
+}
+
+.card-container:hover .actions {
+  display: flex;
 }

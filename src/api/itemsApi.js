@@ -23,8 +23,12 @@ const itemsrApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["items"],
     }),
+    deleteItem: builder.mutation({
+      query: (_id) => ({ url: `/items/${_id}` ,method:'delete'}),
+      invalidatesTags: ["items"],
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetAllItemsQuery,useAddNewItemMutation, useChangeItemMutation } = itemsrApi;
+export const { useGetAllItemsQuery,useAddNewItemMutation, useChangeItemMutation,useDeleteItemMutation } = itemsrApi;
