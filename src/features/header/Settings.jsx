@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAddCardModal,useAddNewUserModal } from "../context/modal/useModals";
+import { useAddCardModal,useAddNewUserModal } from "../../context/modal/useModals";
 
 const Settings = () => {
   const addCard = useAddCardModal();

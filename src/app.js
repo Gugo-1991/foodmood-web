@@ -1,12 +1,10 @@
 import "./app.css";
-import ShowFood from "./mainContainer/showFood";
 import { Route, Routes } from "react-router-dom";
 
-import Header from "./header/Header";
 import { useDispatch } from "react-redux";
 import { setUser } from "./app/authSlice";
-import { useEffect } from "react";
 import routes from "./routes";
+import Header from "./features/header/Header";
 
 const ProtectedRoute = ({ children, roles }) => {
   const xUser = localStorage.getItem("x-user");
@@ -34,16 +32,12 @@ const App = () => {
     dispatch(setUser(JSON.parse(xUser)));
   }
 
-
   return (
     <>
       <Header />
       <Routes>
         {routes.map(
-          (
-            { isProtected, roles, path,  component: Component },
-            index
-          ) =>
+          ({ isProtected, roles, path, component: Component }, index) =>
             isProtected ? (
               <Route
                 key={`route-${index}`}

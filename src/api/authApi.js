@@ -2,13 +2,13 @@ import { baseApi, TAGS } from "./api";
 
 const authrApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
- 
-   userLogin : builder.mutation({
+    userLogin: builder.mutation({
       query: (user) => ({
-        url: '/auth/login',
+        url: "/auth/login",
         method: "POST",
-        data:user
+        data: user,
       }),
+      invalidatesTags: TAGS,
     }),
   }),
   overrideExisting: false,

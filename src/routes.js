@@ -1,5 +1,6 @@
-import HomePage from "./homepage/homePage";
-import Showfood from "./mainContainer/showFood";
+import Showfood from "./features/shop/showFood";
+import AboutSlise from "./features/about/about";
+import HomePage from "./features/home/homePage";
 
 const routes = [
   {
@@ -17,6 +18,14 @@ const routes = [
     section: "",
 
     component: Showfood,
+  },
+  {
+    path: "/about",
+    isProtected: true,
+    roles: ["admin"],
+    section: "",
+
+    component: AboutSlise,
   },
 ];
 

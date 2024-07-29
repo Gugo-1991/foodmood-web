@@ -1,6 +1,6 @@
-import { useGetAllItemsQuery } from "../api/itemsApi";
-import Card from "./showFood/cardCreator";
-import "./showFood/index.css";
+import { useGetAllItemsQuery } from "../../api/itemsApi";
+import Card from "./cardCreator";
+import "./index.css";
 
 const Showfood = () => {
   const { data } = useGetAllItemsQuery();

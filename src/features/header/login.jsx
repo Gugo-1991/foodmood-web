@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import Button from "../shared/Button";
-import Input from "../shared/Input";
-import { useUserLoginMutation } from "../api/authApi.js";
+import { useUserLoginMutation } from "../../api/authApi.js";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { setUser } from "../app/authSlice.js";
+import Button from "../../shared/Button.jsx";
+import Input from "../../shared/Input.jsx";
+import { setUser } from "../../app/authSlice.js";
 
 const Login = () => {
   const [email, setEmail] = useState("");

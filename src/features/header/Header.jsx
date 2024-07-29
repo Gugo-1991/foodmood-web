@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Settings from "./Settings";
-import Login from "../user/login";
+import Login from "./login";
 
 const Header = () => {
   const isLogined = localStorage.getItem("x-user");
