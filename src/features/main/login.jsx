@@ -6,16 +6,19 @@ import { useUserLoginMutation } from "../../api/authApi";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../app/authSlice";
 import { Link } from "react-router-dom";
+import SignUp from "../../modal/modalContent/signUp";
 
 const LoginSlice = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [authMode, setAuthMode] = useState("signIn");
 
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [login] = useUserLoginMutation();
   const [signedUser, setSignedUser] = useState(null);
   const dispatch = useDispatch();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -61,14 +64,12 @@ const LoginSlice = () => {
     setActiveUser(signedUser);
   }, [signedUser, setActiveUser]);
 
-//   const handlePassword = () => {};
+  //   const handlePassword = () => {};
 
- 
-  const xUser = localStorage.getItem("x-user");
 
-  return (
-    <div className="bg sign-in__wrapper">
-      {!xUser && (
+  if (authMode === "signIn") {
+    return (
+      <div className="bg sign-in__wrapper">
         <Form className="shadow p-4 bg-white rounded" onSubmit={handleSubmit}>
           <div className="h4 mb-2 text-center">Sign In</div>
           {show ? (
@@ -120,13 +121,19 @@ const LoginSlice = () => {
           <div className="d-grid justify-content-end">
             <br />
 
-            <Link>Create acount</Link>
+            <Link onClick={() => setAuthMode("signUp")}>Create acount</Link>
             <br />
             <a href="/"> Forget your password?</a>
           </div>
         </Form>
-      )}
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return (
+      <div className="bg sign-in__wrapper">
+          <SignUp  />
+      </div>
+    );
+  }
 };
 export default LoginSlice;
