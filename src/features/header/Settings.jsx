@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useAddCardModal,useAddNewUserModal } from "../../context/modal/useModals";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  useAddCardModal,
+  useAddNewUserModal,
+} from "../../context/modal/useModals";
 
 const Settings = () => {
   const addCard = useAddCardModal();
- const addUser= useAddNewUserModal()
+  const addUser = useAddNewUserModal();
   const [show, setShow] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <li
       aria-hidden
@@ -39,6 +42,8 @@ const Settings = () => {
             className="nav-link "
             onClick={() => {
               localStorage.clear();
+              navigate("/");
+              window.location.reload();
             }}
           >
             LOGOUT

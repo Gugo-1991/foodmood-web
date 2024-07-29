@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Settings from "./Settings";
-import Login from "./login";
 
 const Header = () => {
   const isLogined = localStorage.getItem("x-user");
@@ -31,7 +30,7 @@ const Header = () => {
             </li>
           </ul>
           <ul className="navbar-nav me-5 mb-2 mb-lg-0 h5">
-            {isLogined ? <Settings /> : <Login />}
+            {isLogined && <Settings /> }
           </ul>
         </div>
       </div>

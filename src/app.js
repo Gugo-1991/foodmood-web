@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./app/authSlice";
 import routes from "./routes";
 import Header from "./features/header/Header";
+import LoginSlice from "./features/main/login";
 
 const ProtectedRoute = ({ children, roles }) => {
   const xUser = localStorage.getItem("x-user");
@@ -24,7 +25,6 @@ const ProtectedRoute = ({ children, roles }) => {
 
   return children;
 };
-
 const App = () => {
   const dispatch = useDispatch();
   const xUser = localStorage.getItem("x-user");
@@ -35,6 +35,7 @@ const App = () => {
   return (
     <>
       <Header />
+     {!xUser  && <LoginSlice />}
       <Routes>
         {routes.map(
           ({ isProtected, roles, path, component: Component }, index) =>
