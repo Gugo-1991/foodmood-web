@@ -1,15 +1,9 @@
 import Showfood from "./features/shop/showFood";
 import AboutSlise from "./features/about/about";
 import HomePage from "./features/home/homePage";
-import LoginSlice from "./features/main/login";
 
 const routes = [
-  {
-    path: "/",
-    isProtected: true,
-    roles: ["admin"],
-    component: LoginSlice,
-  },
+
   {
     path: "/home",
     isProtected: true,
@@ -21,7 +15,7 @@ const routes = [
   {
     path: "/shop",
     isProtected: true,
-    roles: ["admin"],
+    roles: [],
     section: "",
 
     component: Showfood,

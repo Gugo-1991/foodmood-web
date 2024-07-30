@@ -6,6 +6,7 @@ import { setUser } from "./app/authSlice";
 import routes from "./routes";
 import Header from "./features/header/Header";
 import LoginSlice from "./features/main/login";
+import Navbar from "./features/header/navbar";
 
 const ProtectedRoute = ({ children, roles }) => {
   const xUser = localStorage.getItem("x-user");
@@ -34,8 +35,10 @@ const App = () => {
 
   return (
     <>
-      <Header />
-     {!xUser  && <LoginSlice />}
+        <Navbar />
+    
+      {/* <Header /> */}
+     {/* {!xUser  && <LoginSlice />} */}
       <Routes>
         {routes.map(
           ({ isProtected, roles, path, component: Component }, index) =>

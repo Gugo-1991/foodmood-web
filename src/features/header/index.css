@@ -1,0 +1,13 @@
+.header{
+    height: 10rem;
+}
+
+
+.logo{
+    font-family: 'Papyrus', 'fantasy';
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+  }

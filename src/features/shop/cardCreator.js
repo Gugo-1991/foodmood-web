@@ -10,7 +10,7 @@ const Card = ({ card }) => {
   const deleteCard = useDeleteCardModal({});
 
   return (
-    <div className={"card-container divcheckedof rounded-3"}>
+    <div className={"card-container w-30 p-1 border border-dark "}>
       <div
         aria-hidden
         className="img rounded-3 d-flex justify-content-center"

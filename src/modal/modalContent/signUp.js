@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { Form, Button, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import { useAddNewUserMutation } from "../../api/userApi";
 
 const SignUp = () => {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [addUser] = useAddNewUserMutation();
 
   const submitAddUser = (user) => {
     if (
@@ -43,8 +45,8 @@ const SignUp = () => {
       setErrorMessage("Password and confirm password do not match.");
       return;
     }
-
-    console.log("User added:", user);
+    addUser(user);
+    window.location.reload();
   };
 
   return (

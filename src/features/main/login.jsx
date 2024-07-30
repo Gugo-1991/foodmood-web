@@ -110,7 +110,7 @@ const LoginSlice = () => {
           {!loading ? (
             <Button
               className=" btn-outline-primary w-100"
-              label="Log in"
+              label="Sign In"
               onClick={() => handleSubmit}
             />
           ) : (
