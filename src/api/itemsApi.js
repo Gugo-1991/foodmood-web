@@ -6,15 +6,19 @@ const itemsrApi = baseApi.injectEndpoints({
       query: () => ({ url: "/items" }),
       providesTags: ["items"],
     }),
+    getItemById: builder.query({
+      query: (id) => ({ url: `/items/${id}` }),
+      providesTags: ["items"],
+    }),
     addNewItem: builder.mutation({
       query: (item) => ({
         url: `/items`,
         method: "Post",
-        data: item ,
+        data: item,
       }),
       invalidatesTags: ["items"],
     }),
-  
+
     changeItem: builder.mutation({
       query: (item) => ({
         url: `/items/${item._id}`,
@@ -24,11 +28,17 @@ const itemsrApi = baseApi.injectEndpoints({
       invalidatesTags: ["items"],
     }),
     deleteItem: builder.mutation({
-      query: (_id) => ({ url: `/items/${_id}` ,method:'delete'}),
+      query: (_id) => ({ url: `/items/${_id}`, method: "delete" }),
       invalidatesTags: ["items"],
     }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetAllItemsQuery,useAddNewItemMutation, useChangeItemMutation,useDeleteItemMutation } = itemsrApi;
+export const {
+  useGetAllItemsQuery,
+  useAddNewItemMutation,
+  useChangeItemMutation,
+  useDeleteItemMutation,
+  useGetItemByIdQuery
+} = itemsrApi;

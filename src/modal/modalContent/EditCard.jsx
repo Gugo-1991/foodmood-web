@@ -5,6 +5,7 @@ import CustomModal from "../../context/modal/CustomModal";
 import Input from "../../shared/Input";
 import Button from "../../shared/Button";
 import { useChangeItemMutation } from "../../api/itemsApi";
+import { Textarea } from "../../shared/TextArea";
 
 const EditCard = ({ open, modalHandler, item }) => {
   const [toChangeValues, setToChangeValues] = useState({ ...item });
@@ -20,8 +21,8 @@ const EditCard = ({ open, modalHandler, item }) => {
     <CustomModal open={open} modalHandler={modalHandler}>
       <>
         {change ? (
-          <div className="bg-secondary d-flex justify-content-center ">
-            <div className="editCard d-flex align-items-center flex-column  p-3">
+          <div className="bg-light d-flex justify-content-center ">
+            <div className="editCard d-flex flex-column  p-3">
               <h3>EDIT CARD</h3>
               <Input
                 name="name"
@@ -44,6 +45,19 @@ const EditCard = ({ open, modalHandler, item }) => {
                 onChange={handleChange}
                 value={toChangeValues.img}
               />
+              <Input
+                name="oldPrice"
+                type="text"
+                label="Old Price"
+                onChange={handleChange}
+                value={toChangeValues.oldPrice}
+              />
+              <Textarea
+                label="Description"
+                name="description"
+                value={toChangeValues.description}
+                onChange={handleChange}
+              />
               <hr></hr>
 
               <Button
@@ -54,8 +68,8 @@ const EditCard = ({ open, modalHandler, item }) => {
             </div>
           </div>
         ) : (
-          <div className="bg-secondary d-flex justify-content-center ">
-            <div className="editCard d-flex align-items-center flex-column  p-3">
+          <div className="bg-light d-flex justify-content-center ">
+            <div className="editCard d-flex  flex-column  p-3">
               <hr></hr>
               <h5 className="text-danger">Are you sure? </h5>
               <h5>Confirmation will save</h5>

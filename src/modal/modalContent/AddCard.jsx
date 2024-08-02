@@ -4,6 +4,7 @@ import CustomModal from "../../context/modal/CustomModal";
 import Input from "../../shared/Input";
 import Button from "../../shared/Button";
 import { useAddNewItemMutation } from "../../api/itemsApi";
+import { Textarea } from "../../shared/TextArea";
 
 const AddCard = ({ open, modalHandler }) => {
   const [addCard, setAddCard] = useState({});
@@ -16,8 +17,8 @@ const AddCard = ({ open, modalHandler }) => {
 
   return (
     <CustomModal open={open} modalHandler={modalHandler}>
-      <div className="bg-secondary d-flex justify-content-center ">
-        <div className="cardModal d-flex align-items-center flex-column  p-3">
+      <div className="bg-light d-flex justify-content-center  ">
+        <div className="  d-flexflex-column  p-3">
           <h3>ADD NEW CARD</h3>
 
           <Input
@@ -35,28 +36,47 @@ const AddCard = ({ open, modalHandler }) => {
             onChange={handleChange}
           />
           <Input
+            type="number"
+            label="Old Price"
+            name="oldPrice"
+            onChange={handleChange}
+          />
+          <Input
             type="text"
             required
             label="URL"
-            name="img"
+            name="src"
             onChange={handleChange}
           />
-
+          <Textarea
+            label="Description"
+            name="description"
+            onChange={handleChange}
+          />
+          {/* <Input
+            type="text"
+            required
+            label="Description"
+            name="description"
+            onChange={handleChange}
+          /> */}
           <hr />
 
-          <Button
-            label="ADD"
-            className="mb-2 btn-outline-primary"
-            onClick={() => {
-              addNewCard(addCard);
-              modalHandler();
-            }}
-          />
-          <Button
-            className="btn-outline-danger"
-            label="CANCEL"
-            onClick={modalHandler}
-          />
+          <div className="btn-group">
+            <Button
+              label="ADD"
+              className=" btn-outline-primary"
+              onClick={() => {
+                addNewCard(addCard);
+                modalHandler();
+              }}
+            />
+            <Button
+              className="btn-outline-danger"
+              label="CANCEL"
+              onClick={modalHandler}
+            />
+          </div>
         </div>
       </div>
     </CustomModal>

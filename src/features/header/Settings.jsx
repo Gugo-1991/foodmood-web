@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  useAddCardModal,
+  // useAddCardModal,
   useAddNewUserModal,
 } from "../../context/modal/useModals";
 
 const Settings = () => {
-  const addCard = useAddCardModal();
+  // const addCard = useAddCardModal();
   const addUser = useAddNewUserModal();
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -28,9 +28,9 @@ const Settings = () => {
       </Link>
       <ul aria-hidden className={` dropdown-menu  ${show ? "show" : ""}`}>
         <li>
-          <Link className="nav-link " onClick={() => addCard.attachHandler()}>
+          {/* <Link className="nav-link " onClick={() => addCard.attachHandler()}>
             ADD CARD
-          </Link>
+          </Link> */}
         </li>
         <li>
           <Link className="nav-link " onClick={() => addUser.attachHandler()}>

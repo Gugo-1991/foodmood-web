@@ -10,8 +10,15 @@ const itemsrApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["users"],
     }),
+    initFirstUser: builder.mutation({
+      query: () => ({
+        url: "/users/initFirstUser",
+        method: "POST",
+      }),
+      invalidatesTags: ["users"],
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useAddNewUserMutation } = itemsrApi;
+export const { useAddNewUserMutation, useInitFirstUserMutation } = itemsrApi;

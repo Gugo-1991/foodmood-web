@@ -1,0 +1,21 @@
+.carousel-indicators {
+  bottom: 3%;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #af3838;
+  width: 15px !important;
+  border-radius: 50%;
+  height: 14px !important;
+}
+.carousel-indicators .active {
+  background-color: #000 !important;
+}
+
+
+.slider-item-div {
+  background-color: rgb(24, 23, 23);
+  text-align: center;
+  height: 50rem;
+  width: 50%;
+}
+

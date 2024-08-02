@@ -18,7 +18,7 @@ const CustomModal = ({
       onClose={modalHandler}
       center
       classNames={{
-        modal: `${modalClassNames} custom-modal modal-dialog-centered modal-dialog-scrollable `,
+        modal: `${modalClassNames} custom-modal  modal-dialog-scrollable `,
         overlay: "overlay" || "custom-overlay",
         closeButton: "close",
         modalAnimationIn: "customEnterModalAnimation",

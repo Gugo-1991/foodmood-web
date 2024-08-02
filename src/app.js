@@ -1,12 +1,14 @@
-import "./app.css";
+import "./App.css";
+
 import { Route, Routes } from "react-router-dom";
 
-import { useDispatch } from "react-redux";
-import { setUser } from "./app/authSlice";
 import routes from "./routes";
-import Header from "./features/header/Header";
+import TopHeader from "./components/TopHeader/TopHeader";
+import NavBar from "./components/Navbar/NavBar";
+import Footer from "./components/Footer/Footer";
 import LoginSlice from "./features/main/login";
-import Navbar from "./features/header/navbar";
+import { useInitFirstUserMutation } from "./api/userApi";
+import { useEffect } from "react";
 
 const ProtectedRoute = ({ children, roles }) => {
   const xUser = localStorage.getItem("x-user");
@@ -27,18 +29,19 @@ const ProtectedRoute = ({ children, roles }) => {
   return children;
 };
 const App = () => {
-  const dispatch = useDispatch();
+  const [user] = useInitFirstUserMutation();
+  useEffect(() => {
+    user();
+  }, [user]);
   const xUser = localStorage.getItem("x-user");
-  if (xUser) {
-    dispatch(setUser(JSON.parse(xUser)));
-  }
 
   return (
-    <>
-        <Navbar />
-    
-      {/* <Header /> */}
-     {/* {!xUser  && <LoginSlice />} */}
+    <div className="App">
+      <TopHeader />
+      <NavBar />
+
+      {!xUser && <LoginSlice />}
+
       <Routes>
         {routes.map(
           ({ isProtected, roles, path, component: Component }, index) =>
@@ -61,7 +64,8 @@ const App = () => {
             )
         )}
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 };
 

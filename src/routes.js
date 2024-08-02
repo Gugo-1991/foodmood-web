@@ -1,21 +1,29 @@
 import Showfood from "./features/shop/showFood";
 import AboutSlise from "./features/about/about";
-import HomePage from "./features/home/homePage";
+import Home from "./Pages/home";
+import ItemPage from "./Pages/item";
 
 const routes = [
-
   {
-    path: "/home",
+    path: "/",
     isProtected: true,
     roles: ["admin"],
     section: "",
-
-    component: HomePage,
+    component: Home,
   },
+  {
+    path: "/item/:id",
+    isProtected: true,
+    roles: ["admin" ,'user'],
+    section: "",
+    component: ItemPage,
+  },
+
+
   {
     path: "/shop",
     isProtected: true,
-    roles: [],
+    roles: ["admin"],
     section: "",
 
     component: Showfood,

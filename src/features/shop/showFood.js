@@ -7,6 +7,8 @@ const Showfood = () => {
   return (
     <div className="bg d-grid vh-100">
       <div className="page p-3 d-grid ">
+
+
         {Array.isArray(data)
           ? data.map((card) => {
               return <Card key={card._id} card={card} />;

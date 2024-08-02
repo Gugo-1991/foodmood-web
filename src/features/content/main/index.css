@@ -1,0 +1,17 @@
+.main{
+    width: 70%;
+    height: auto;
+    background-color: red;
+    position: absolute;
+    left: 50%; 
+    transform: translate(-50%, -50%)
+}
+
+
+.gridd {
+    display: grid;
+    row-gap: var(--bs-gap);
+}
+.gridd {
+    --bs-gap: .25rem 1rem;
+}

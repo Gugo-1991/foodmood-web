@@ -5,7 +5,7 @@ const Delete = ({ onClick, message, className }) => {
       aria-hidden
       onClick={onClick}
     >
-      {message} <i className="bi bi-trash text-danger display-5 p-3"></i>
+      {message} <i className="bi bi-trash text-danger display-6 p-3"></i>
     </span>
   );
 };

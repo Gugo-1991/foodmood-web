@@ -10,7 +10,6 @@ const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <h1 className="p-3 logo">JEWELRY_ART</h1>
         </Link>
-        
       </div>
 
       <div>
@@ -32,7 +31,7 @@ const Navbar = () => {
 
                   <ul className="dropdown-menu dropdown-menu border-0  ">
                     <li>
-                      <a className="dropdown-item" href="/">
+                      <a className="dropdown-item" href="/products">
                         All Shopping
                       </a>
                     </li>
