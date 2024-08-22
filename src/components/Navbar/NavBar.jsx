@@ -1,13 +1,13 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Nav, Container } from "react-bootstrap";
 import "./index.css";
-
 const NavBar = () => {
   return (
     <Navbar expand="lg" bg="white" className="boxShadaw p-3">
       <Container>
         <Navbar.Brand href="/">
           <img alt="ART_JEWERLY" src={''} />
+
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

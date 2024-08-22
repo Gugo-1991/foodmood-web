@@ -5,15 +5,16 @@ import {
   EnvelopeFill,
   GeoAltFill,
   Facebook,
-  Instagram,
   Twitter,
+  Google,
 } from "react-bootstrap-icons";
-import "../../index.css";
-import Button from "../../shared/Button.jsx";
 import { useAddCardModal } from "../../context/modal/useModals.js";
+import useLoginWithGoogle from "../../utils/loginWithGoogle.js";
+import { LoginSocialFacebook } from "reactjs-social-login";
 
 const Footer = () => {
   const addCard = useAddCardModal();
+  const login = useLoginWithGoogle();
 
   return (
     <Box>
@@ -25,18 +26,31 @@ const Footer = () => {
 
               <FooterLink href="/">
                 <Social className="me-3">
-                  <Facebook></Facebook>
+                  <Google onClick={login}></Google>
                 </Social>
               </FooterLink>
-              <FooterLink href="/">
-                <Social className="me-3">
-                  <Instagram></Instagram>
-                </Social>
-              </FooterLink>
+
               <FooterLink href="/">
                 <Social className="me-3">
                   <Twitter></Twitter>
                 </Social>
+              </FooterLink>
+
+              <FooterLink>
+                <LoginSocialFacebook
+                  className=" d-flex "
+                  appId="1519579592263792"
+                  onResolve={(response) => {
+                    console.log(response);
+                  }}
+                  onReject={(err) => {
+                    console.log(err);
+                  }}
+                >
+                  <Social>
+                    <Facebook></Facebook>
+                  </Social>
+                </LoginSocialFacebook>
               </FooterLink>
             </div>
           </Col>
@@ -49,11 +63,6 @@ const Footer = () => {
               <FooterLink href="/">Men</FooterLink>
               <FooterLink href="/">Accessories</FooterLink>
               <FooterLink href="/">Contact</FooterLink>
-            </Column>
-            <Column>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
             </Column>
           </Col>
           <Col>
@@ -71,10 +80,15 @@ const Footer = () => {
                 <PhoneFill className="me-2"></PhoneFill>
                 +374
               </FooterLink>
-              <Button
-                label="Add New Item"
-                onClick={() => addCard.attachHandler()}
-              />
+
+              <Col>
+                <div>
+                  <h6 className="mb-4">Admin</h6>
+                  <FooterLink onClick={() => addCard.attachHandler()}>
+                    Add New Item
+                  </FooterLink>
+                </div>
+              </Col>
             </Column>
           </Col>
         </Row>

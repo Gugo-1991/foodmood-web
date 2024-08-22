@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { useAddNewUserMutation } from "../../api/userApi";
 
-const SignUp = () => {
+const SignUp = ({ setAuthMode }) => {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -103,13 +103,13 @@ const SignUp = () => {
           <br />
           <Button
             variant="primary"
-            className="mt-3 d-flex"
+            className="btn w-100"
             onClick={() => submitAddUser(user)}
           >
             Create Account
           </Button>
           <br />
-          <Link to="/login" className="mt-3">
+          <Link to="/" className="mt-3" onClick={() => setAuthMode("signIn")}>
             Have account?
           </Link>
         </Form>

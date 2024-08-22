@@ -6,7 +6,6 @@ import Button from "../../shared/Button";
 
 const AddBalance = ({ open, modalHandler }) => {
   const [value, setValue] = useState("");
-  const userId = localStorage.getItem("userId");
 
 
   return (

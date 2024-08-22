@@ -104,9 +104,7 @@ const LoginSlice = () => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-2" controlId="checkbox">
-            <Form.Check type="checkbox" label="Remember me" />
-          </Form.Group>
+        <br />
           {!loading ? (
             <Button
               className=" btn-outline-primary w-100"
@@ -131,7 +129,7 @@ const LoginSlice = () => {
   } else {
     return (
       <div className="bg sign-in__wrapper">
-          <SignUp  />
+          <SignUp setAuthMode={setAuthMode}  />
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import routes from "./routes";
 import TopHeader from "./components/TopHeader/TopHeader";
 import NavBar from "./components/Navbar/NavBar";
-import Footer from "./components/Footer/Footer";
+import Footer from "./features/footer/Footer";
 import LoginSlice from "./features/main/login";
 import { useInitFirstUserMutation } from "./api/userApi";
 import { useEffect } from "react";
