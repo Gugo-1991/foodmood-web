@@ -8,13 +8,19 @@ import {
   Twitter,
   Google,
 } from "react-bootstrap-icons";
-import { useAddCardModal } from "../../context/modal/useModals.js";
+import {
+  useAddCardModal,
+  useAddNewUserModal,
+} from "../../context/modal/useModals.js";
 import useLoginWithGoogle from "../../utils/loginWithGoogle.js";
 import { LoginSocialFacebook } from "reactjs-social-login";
 
 const Footer = () => {
   const addCard = useAddCardModal();
+  const addUser = useAddNewUserModal();
   const login = useLoginWithGoogle();
+  const user = JSON.parse(localStorage.getItem("x-user"));
+console.log(user);
 
   return (
     <Box>
@@ -82,12 +88,18 @@ const Footer = () => {
               </FooterLink>
 
               <Col>
-                <div>
-                  <h6 className="mb-4">Admin</h6>
-                  <FooterLink onClick={() => addCard.attachHandler()}>
-                    Add New Item
-                  </FooterLink>
-                </div>
+                {user?.role === "admin" && (
+                  <div>
+                    <h6 className="mb-4">Admin</h6>
+                    <FooterLink onClick={() => addCard.attachHandler()}>
+                      Add New Item
+                    </FooterLink>
+                    <br />
+                    <FooterLink onClick={() => addUser.attachHandler()}>
+                      Add User
+                    </FooterLink>
+                  </div>
+                )}
               </Col>
             </Column>
           </Col>

@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/",
     isProtected: true,
-    roles: ["admin"],
+    roles: ["admin",'user'],
     section: "",
     component: Home,
   },
@@ -23,7 +23,7 @@ const routes = [
   {
     path: "/shop",
     isProtected: true,
-    roles: ["admin"],
+    roles: ["admin",'user'],
     section: "",
 
     component: Showfood,

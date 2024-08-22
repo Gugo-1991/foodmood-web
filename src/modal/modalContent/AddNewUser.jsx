@@ -59,7 +59,7 @@ const AddNewUser = ({ open, modalHandler }) => {
   };
   return (
     <CustomModal open={open} modalHandler={modalHandler}>
-      <div className="bg-secondary d-flex justify-content-center ">
+      <div className="bg-light d-flex justify-content-center">
         <div className="addUser d-flex align-items-center flex-column  p-3">
           <h3>ADD USER</h3>
 

@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useModal } from "./useModal";
 import AddBalance from "../../modal/modalContent/AddBalance";
-import AddCard from "../../modal/modalContent/AddCard";
+import CardForm from "../../modal/modalContent/CardForm";
 import AddNewUser from "../../modal/modalContent/AddNewUser";
-import EditCard from "../../modal/modalContent/EditCard";
 import DeleteCard from "../../modal/modalContent/DeleteCard";
 
 const MODAL_KEYS = Object.freeze({
@@ -18,7 +17,7 @@ export const useAddCardModal = (props) => {
   const [localProps, setLocalProps] = useState({ ...props });
   const key = MODAL_KEYS.ADD_NEW_CARD;
 
-  const modal = useMemo(() => () => <AddCard {...localProps} />, [localProps]);
+  const modal = useMemo(() => () => <CardForm {...localProps} />, [localProps]);
   const { isOpen, open, close } = useModal(key, modal);
   useEffect(() => {
     setLocalProps((props) => ({
@@ -66,9 +65,9 @@ export const useAddNewUserModal = (props) => {
 };
 
 export const useEditCardModal = (props) => {
-  const [localProps, setLocalProps] = useState({ ...props });
+  const [localProps, setLocalProps] = useState({ ...props ,isEditMode:true});
   const key = MODAL_KEYS.EDIT_CARD;
-  const modal = useMemo(() => () => <EditCard {...localProps} />, [localProps]);
+  const modal = useMemo(() => () => <CardForm {...localProps} />, [localProps]);
   const { isOpen, open, close } = useModal(key, modal);
   useEffect(() => {
     setLocalProps((props) => ({
